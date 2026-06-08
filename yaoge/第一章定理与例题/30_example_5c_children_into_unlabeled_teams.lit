@@ -4,18 +4,14 @@
 # difficulty: medium
 # natural_language_idea: Split 10 children into two unlabeled teams; divide the labeled-team count by 2.
 # 中文题意: 将 10 个孩子分成两个无标号的 5 人队。
-# 中文思路: 在有标号分队基础上再除以 2!，验证结果为 126。
+# 中文思路: 无标号分队需要再按交换两个队取商；这里验证阶乘商。
 # litex_code: this file
-# proof_attempt: Model unlabeled teams abstractly and verify the arithmetic.
+# proof_attempt: Record unlabeled quotient count as proof debt and verify arithmetic.
 # status: blocked
 # blocker: blocked_by_stdlib
-# notes: The unlabeled quotient by team swap is abstract.
-# verification_boundary: proof_debt 和 intended_result 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
+# notes: Needs quotient counting by swapping the two teams.
+# verification_boundary: proof_debt 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
 
-abstract_prop unlabeled_team_count(item, total_count)
+# proof_debt: prove unlabeled team splits are labeled splits modulo swapping the two teams.
 
-have example_5c_children_into_unlabeled_teams set
-# proof_debt: know $unlabeled_team_count(example_5c_children_into_unlabeled_teams, (10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1) / ((5 * 4 * 3 * 2 * 1) * (5 * 4 * 3 * 2 * 1) * (2 * 1)))
-
-# intended_result: $unlabeled_team_count(example_5c_children_into_unlabeled_teams, (10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1) / ((5 * 4 * 3 * 2 * 1) * (5 * 4 * 3 * 2 * 1) * (2 * 1)))
 (10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1) / ((5 * 4 * 3 * 2 * 1) * (5 * 4 * 3 * 2 * 1) * (2 * 1)) = 126

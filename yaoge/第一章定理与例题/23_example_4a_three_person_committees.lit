@@ -4,21 +4,14 @@
 # difficulty: easy
 # natural_language_idea: A 3-person committee from 20 people is a 3-subset.
 # 中文题意: 从 20 人中选 3 人组成委员会，就是选一个 3 元子集。
-# 中文思路: 用 choose 表示组合数，并验证 C(20,3)=1140 的阶乘计算。
+# 中文思路: 需要证明 3 元子集数量等于有序三元组数量除以 3!；这里验证阶乘商。
 # litex_code: this file
-# proof_attempt: Model committee choice through choose and verify the factorial calculation.
+# proof_attempt: Record subset-count proof debt and verify the arithmetic.
 # status: blocked
 # blocker: blocked_by_stdlib
-# notes: The choose value is asserted because choose is abstract.
-# verification_boundary: proof_debt 和 intended_result 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
+# notes: Needs finite subset cardinality/choose theorem.
+# verification_boundary: proof_debt 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
 
-abstract_prop committee_count(item, total_count)
+# proof_debt: construct 3-person subsets of a 20-person set and prove their count.
 
-have choose set
-have example_4a_three_person_committees set
-# proof_debt: know choose $in fn(n, r R) R
-# proof_debt: know choose(20, 3) = 1140
-# proof_debt: know $committee_count(example_4a_three_person_committees, choose(20, 3))
-
-# intended_result: choose(20, 3) = 1140
 20 * 19 * 18 / (3 * 2 * 1) = 1140

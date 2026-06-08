@@ -4,21 +4,18 @@
 # difficulty: easy
 # natural_language_idea: The nonnegative solutions of x1+x2=3 are (0,3),(1,2),(2,1),(3,0).
 # 中文题意: 方程 x1+x2=3 的非负整数解为 (0,3),(1,2),(2,1),(3,0)。
-# 中文思路: 逐个验证这四个候选解满足方程，并抽象记录解的数量为 4。
+# 中文思路: Litex 可验证四个候选解满足方程；“没有其他解”的穷尽性仍需有限枚举/解集证明。
 # litex_code: this file
-# proof_attempt: State the four enumerated solutions and the count.
+# proof_attempt: Verify each listed solution and record exhaustiveness as proof debt.
 # status: blocked
 # blocker: blocked_by_stdlib
-# notes: Exhaustiveness of the finite solution set is abstract; tuple arithmetic is checkable.
-# verification_boundary: proof_debt 和 intended_result 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
+# notes: Needs exact finite solution-set equality or exhaustive enumeration over bounded pairs.
+# verification_boundary: proof_debt 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
 
-abstract_prop solution_pair_count(item, total_count)
-
-have example_6a_nonnegative_solutions_two_variables set
-# proof_debt: know $solution_pair_count(example_6a_nonnegative_solutions_two_variables, 4)
+# proof_debt: prove these four pairs exhaust all nonnegative integer solutions.
 
 0 + 3 = 3
 1 + 2 = 3
 2 + 1 = 3
 3 + 0 = 3
-# intended_result: $solution_pair_count(example_6a_nonnegative_solutions_two_variables, 4)
+4 = 4

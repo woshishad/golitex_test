@@ -4,18 +4,14 @@
 # difficulty: easy
 # natural_language_idea: Flags of the same color are indistinguishable, so divide 9! by 4!3!2!.
 # 中文题意: 9 面旗中同色旗不可区分，颜色数量为 4、3、2。
-# 中文思路: 用重复对象排列公式，验证 9!/(4!3!2!)=1260。
+# 中文思路: 需要证明同色旗互换不改变序列的商计数；这里只验证阶乘商。
 # litex_code: this file
-# proof_attempt: Model color-sequence counting abstractly and verify the arithmetic.
+# proof_attempt: Record quotient-count proof debt and verify the arithmetic.
 # status: blocked
 # blocker: blocked_by_stdlib
-# notes: The repeated-object count is abstract.
-# verification_boundary: proof_debt 和 intended_result 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
+# notes: Needs quotient counting for indistinguishable flags.
+# verification_boundary: proof_debt 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
 
-abstract_prop colored_flag_sequence_count(item, total_count)
+# proof_debt: prove colored flag sequences are labeled flag permutations modulo same-color permutations.
 
-have example_3f_colored_flags set
-# proof_debt: know $colored_flag_sequence_count(example_3f_colored_flags, (9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1) / ((4 * 3 * 2 * 1) * (3 * 2 * 1) * (2 * 1)))
-
-# intended_result: $colored_flag_sequence_count(example_3f_colored_flags, (9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1) / ((4 * 3 * 2 * 1) * (3 * 2 * 1) * (2 * 1)))
 (9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1) / ((4 * 3 * 2 * 1) * (3 * 2 * 1) * (2 * 1)) = 1260

@@ -21,6 +21,7 @@ tmp/
 std/todo.md
 std/*/todo.md
 todo.md
+!yaoge/第一章定理与例题/todo.md
 
 # Python and local environments
 .venv/

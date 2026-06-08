@@ -4,18 +4,14 @@
 # difficulty: easy
 # natural_language_idea: Split 10 children into two labeled teams of 5 and 5.
 # 中文题意: 将 10 个孩子分成两个有标号的 5 人队。
-# 中文思路: 用有标号分组公式，验证 10!/(5!5!)=252。
+# 中文思路: 有标号队伍等价于选择 A 队的 5 人子集；这里验证阶乘商。
 # litex_code: this file
-# proof_attempt: Model labeled teams abstractly and verify the arithmetic.
+# proof_attempt: Record labeled-team subset count as proof debt and verify arithmetic.
 # status: blocked
 # blocker: blocked_by_stdlib
-# notes: The team-label counting interpretation is abstract.
-# verification_boundary: proof_debt 和 intended_result 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
+# notes: Needs subset count for choosing one labeled team.
+# verification_boundary: proof_debt 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
 
-abstract_prop labeled_team_count(item, total_count)
+# proof_debt: prove labeled 5-and-5 team splits are counted by 10!/(5!5!).
 
-have example_5b_children_into_labeled_teams set
-# proof_debt: know $labeled_team_count(example_5b_children_into_labeled_teams, (10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1) / ((5 * 4 * 3 * 2 * 1) * (5 * 4 * 3 * 2 * 1)))
-
-# intended_result: $labeled_team_count(example_5b_children_into_labeled_teams, (10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1) / ((5 * 4 * 3 * 2 * 1) * (5 * 4 * 3 * 2 * 1)))
 (10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1) / ((5 * 4 * 3 * 2 * 1) * (5 * 4 * 3 * 2 * 1)) = 252

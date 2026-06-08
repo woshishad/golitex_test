@@ -4,24 +4,16 @@
 # difficulty: easy
 # natural_language_idea: For each of n elements, choose whether it is in the subset; exclude the empty set for nonempty subsets.
 # 中文题意: n 元集合的每个元素都可以选择是否进入子集；非空子集要排除空集。
-# 中文思路: 用抽象子集计数谓词表示 2^n 和 2^n-1，并验证 n=5 的数值。
+# 中文思路: 一般幂集基数需要标准库；这里验证 n=5 时用五个二值选择记录得到 2^5，并扣除空集得到 31。
 # litex_code: this file
-# proof_attempt: State subset and nonempty-subset counts abstractly; verify a concrete arithmetic instance.
+# proof_attempt: Verify the binary choice record count for n=5 and record powerset cardinality as proof debt.
 # status: blocked
 # blocker: blocked_by_stdlib
-# notes: Finite powerset cardinality is needed for a full proof.
-# verification_boundary: proof_debt 和 intended_result 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
+# notes: Needs finite powerset cardinality and nonempty-subset count.
+# verification_boundary: proof_debt 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
 
-abstract_prop subset_count(item, element_count, total_count)
-abstract_prop nonempty_subset_count(item, element_count, total_count)
+# proof_debt: prove subsets of a finite n-element set are in bijection with binary membership choice functions.
 
-have example_4e_subsets_of_n_element_set set
-
-# proof_debt: know:
-# proof_debt:     forall n R:
-# proof_debt:         $subset_count(example_4e_subsets_of_n_element_set, n, 2^n)
-# proof_debt:         $nonempty_subset_count(example_4e_subsets_of_n_element_set, n, 2^n - 1)
-
-# intended_result: $subset_count(example_4e_subsets_of_n_element_set, 5, 2^5)
-2^5 = 32
+count({0, 1}) = 2
+count(cart({0, 1}, {0, 1}, {0, 1}, {0, 1}, {0, 1})) = count({0, 1}) * count({0, 1}) * count({0, 1}) * count({0, 1}) * count({0, 1}) = 2^5 = 32
 2^5 - 1 = 31

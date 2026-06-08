@@ -4,19 +4,14 @@
 # difficulty: easy
 # natural_language_idea: Split r-subsets by whether a fixed element is included to get Pascal's identity.
 # 中文题意: 按某个固定元素是否被选入，把 r 元子集分成两类，得到 Pascal 恒等式。
-# 中文思路: 将 C(n,r)=C(n-1,r-1)+C(n-1,r) 作为 choose 的抽象恒等式记录。
+# 中文思路: 需要先有 choose 和按固定元素分割子集的并不交计数；这里仅验证 n=5,r=2 的数值形状。
 # litex_code: this file
-# proof_attempt: State Pascal's identity for an abstract choose function.
+# proof_attempt: Keep Pascal identity as proof debt and verify one numeric instance.
 # status: blocked
 # blocker: blocked_by_stdlib
-# notes: The combinatorial partition proof is not formalized because choose is abstract.
-# verification_boundary: proof_debt 和 intended_result 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
+# notes: Needs choose plus finite disjoint-union counting of subset classes.
+# verification_boundary: proof_debt 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
 
-have choose set
-# proof_debt: know choose $in fn(n, r R) R
+# proof_debt: prove C(n,r)=C(n-1,r-1)+C(n-1,r) by partitioning r-subsets.
 
-# proof_debt: know:
-# proof_debt:     forall n, r R:
-# proof_debt:         choose(n, r) = choose(n - 1, r - 1) + choose(n - 1, r)
-
-# intended_result: choose(5, 2) = choose(4, 1) + choose(4, 2)
+10 = 4 + 6

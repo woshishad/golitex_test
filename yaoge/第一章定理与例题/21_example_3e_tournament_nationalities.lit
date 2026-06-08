@@ -4,18 +4,14 @@
 # difficulty: easy
 # natural_language_idea: Only the nationalities matter, so divide 10! by factorials of equal-nationality counts.
 # 中文题意: 只关心选手国籍顺序，同国籍选手不可区分。
-# 中文思路: 用多重集合排列思想，验证 10!/(4!3!2!1!)=12600。
+# 中文思路: 需要证明按国籍遗忘姓名得到的商计数；这里只验证阶乘商。
 # litex_code: this file
-# proof_attempt: Model nationality-pattern rankings abstractly and verify the arithmetic.
+# proof_attempt: Record quotient-count proof debt and verify the arithmetic.
 # status: blocked
 # blocker: blocked_by_stdlib
-# notes: The multinomial pattern count is abstract.
-# verification_boundary: proof_debt 和 intended_result 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
+# notes: Needs quotient counting for nationality classes.
+# verification_boundary: proof_debt 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
 
-abstract_prop nationality_pattern_count(item, total_count)
+# proof_debt: prove nationality patterns are player rankings modulo same-nationality permutations.
 
-have example_3e_tournament_nationalities set
-# proof_debt: know $nationality_pattern_count(example_3e_tournament_nationalities, (10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1) / ((4 * 3 * 2 * 1) * (3 * 2 * 1) * (2 * 1) * 1))
-
-# intended_result: $nationality_pattern_count(example_3e_tournament_nationalities, (10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1) / ((4 * 3 * 2 * 1) * (3 * 2 * 1) * (2 * 1) * 1))
 (10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1) / ((4 * 3 * 2 * 1) * (3 * 2 * 1) * (2 * 1) * 1) = 12600

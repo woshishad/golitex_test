@@ -4,21 +4,15 @@
 # difficulty: easy
 # natural_language_idea: Each of n input points independently chooses value 0 or 1, so there are 2^n functions.
 # 中文题意: n 个输入点分别取 0 或 1，因此二值函数总数是 2^n。
-# 中文思路: 用抽象函数计数谓词表达一般结论，并验证 n=5 时 2^5=32。
+# 中文思路: 一般 n 需要函数空间基数或归纳；这里验证 n=5 时五个二值选择位置的笛卡尔积。
 # litex_code: this file
-# proof_attempt: State the generic function count through an abstract predicate.
+# proof_attempt: Verify the n=5 binary choice count and keep the general function-space count as proof debt.
 # status: blocked
 # blocker: blocked_by_stdlib
-# notes: A formal proof needs finite function-space cardinality.
-# verification_boundary: proof_debt 和 intended_result 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
+# notes: Needs a general finite function-space cardinality theorem for arbitrary n.
+# verification_boundary: proof_debt 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
 
-abstract_prop binary_function_count(item, point_count, total_count)
+# proof_debt: prove that functions from an n-element set to a 2-element set have 2^n elements.
 
-have example_2d_binary_functions_on_n_points set
-
-# proof_debt: know:
-# proof_debt:     forall n R:
-# proof_debt:         $binary_function_count(example_2d_binary_functions_on_n_points, n, 2^n)
-
-# intended_result: $binary_function_count(example_2d_binary_functions_on_n_points, 5, 2^5)
-2^5 = 32
+count({0, 1}) = 2
+count(cart({0, 1}, {0, 1}, {0, 1}, {0, 1}, {0, 1})) = count({0, 1}) * count({0, 1}) * count({0, 1}) * count({0, 1}) * count({0, 1}) = 2^5 = 32

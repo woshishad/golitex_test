@@ -4,21 +4,24 @@
 # difficulty: easy
 # natural_language_idea: A two-stage choice with m options first and n options second has m*n outcomes.
 # 中文题意: 两步选择中，第一步有 m 种选法，第二步有 n 种选法，则总共有 m*n 种结果。
-# 中文思路: 把计数规则作为抽象谓词记录，并直接验证具体乘法算术。
+# 中文思路: 设第一步选择集合为 A、第二步选择集合为 B；所有两步选择就是笛卡尔积 cart(A,B)，其基数等于 count(A)*count(B)。
 # litex_code: this file
-# proof_attempt: Model the counting interpretation as an abstract predicate; verify concrete arithmetic instances directly.
-# status: blocked
-# blocker: blocked_by_stdlib
-# notes: A combinatorics counting library is needed to prove the abstract counting predicate itself.
-# verification_boundary: proof_debt 和 intended_result 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
+# proof_attempt: Prove the finite-set Cartesian-product count, then instantiate a 3 by 10 example.
+# status: checkable
+# blocker: 
+# notes: This uses Litex builtin finite-set and Cartesian-product count support.
 
-abstract_prop two_stage_count(item, first_count, second_count, total_count)
+claim:
+    prove:
+        forall A, B set, m, n N:
+            $is_finite_set(A)
+            $is_finite_set(B)
+            count(A) = m
+            count(B) = n
+            =>:
+                count(cart(A, B)) = m * n
+    count(cart(A, B)) = count(A) * count(B) = m * n
 
-have theorem_basic_principle_of_counting set
-
-# proof_debt: know:
-# proof_debt:     forall m, n R:
-# proof_debt:         $two_stage_count(theorem_basic_principle_of_counting, m, n, m * n)
-
-# intended_result: $two_stage_count(theorem_basic_principle_of_counting, 3, 10, 3 * 10)
-3 * 10 = 30
+count({1, 2, 3}) = 3
+count({11, 12, 13, 14, 15, 16, 17, 18, 19, 20}) = 10
+count(cart({1, 2, 3}, {11, 12, 13, 14, 15, 16, 17, 18, 19, 20})) = count({1, 2, 3}) * count({11, 12, 13, 14, 15, 16, 17, 18, 19, 20}) = 3 * 10 = 30

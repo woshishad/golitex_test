@@ -4,22 +4,18 @@
 # difficulty: medium
 # natural_language_idea: Nonnegative solutions become positive solutions after adding 1 to every variable.
 # 中文题意: 非负整数解可通过给每个变量加 1 转化为正整数解。
-# 中文思路: 用抽象计数谓词记录非负解数量 C(n+r-1,r-1)。
+# 中文思路: 一般证明需要变量平移和解集基数保持；本文件验证 r=2,n=3 的四个候选解。
 # litex_code: this file
-# proof_attempt: State the nonnegative stars-and-bars count using abstract choose.
+# proof_attempt: Record the general transformation as proof debt and verify the small solution arithmetic.
 # status: blocked
 # blocker: blocked_by_stdlib
-# notes: A formal proof needs a tuple transformation and finite counting.
-# verification_boundary: proof_debt 和 intended_result 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
+# notes: Needs tuple solution-set counting and bijection preservation of count.
+# verification_boundary: proof_debt 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
 
-abstract_prop nonnegative_solution_count(item, variable_count, sum_value, total_count)
+# proof_debt: prove nonnegative solution count C(n+r-1,r-1) by shifting variables to positive solutions.
 
-have choose set
-have proposition_nonnegative_integer_solutions set
-# proof_debt: know choose $in fn(n, r R) R
-
-# proof_debt: know:
-# proof_debt:     forall r, n R:
-# proof_debt:         $nonnegative_solution_count(proposition_nonnegative_integer_solutions, r, n, choose(n + r - 1, r - 1))
-
-# intended_result: $nonnegative_solution_count(proposition_nonnegative_integer_solutions, 2, 3, choose((3 + 2) - 1, 2 - 1))
+0 + 3 = 3
+1 + 2 = 3
+2 + 1 = 3
+3 + 0 = 3
+4 = 4

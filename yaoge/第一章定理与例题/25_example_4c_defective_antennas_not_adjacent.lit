@@ -4,22 +4,13 @@
 # difficulty: medium
 # natural_language_idea: Place m defective antennas in n slots with at least one functional antenna between defectives.
 # 中文题意: 在 n 个位置放 m 个坏天线，要求任意两个坏天线不相邻。
-# 中文思路: 用间隔变换得到 shifted combination 公式 C(n-m+1,m)。
+# 中文思路: 需要把不相邻位置映射到位移后的普通组合；当前只记录该双射缺口。
 # litex_code: this file
-# proof_attempt: State the gap-transformed count using abstract choose.
+# proof_attempt: Keep the shifted-combination bijection as proof debt.
 # status: blocked
 # blocker: blocked_by_stdlib
-# notes: Needs a formal bijection between valid placements and shifted positions.
-# verification_boundary: proof_debt 和 intended_result 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
+# notes: Needs finite subset counting plus a gap-removal bijection.
+# verification_boundary: proof_debt 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
 
-abstract_prop nonadjacent_defective_antenna_count(item, total_slots, defective_count, total_count)
-
-have choose set
-have example_4c_defective_antennas_not_adjacent set
-# proof_debt: know choose $in fn(n, r R) R
-
-# proof_debt: know:
-# proof_debt:     forall n, m R:
-# proof_debt:         $nonadjacent_defective_antenna_count(example_4c_defective_antennas_not_adjacent, n, m, choose(n - m + 1, m))
-
-# intended_result: $nonadjacent_defective_antenna_count(example_4c_defective_antennas_not_adjacent, 10, 3, choose(10 - 3 + 1, 3))
+# proof_debt: prove valid defective-position subsets are in bijection with m-subsets of n-m+1 shifted positions.
+# intended_result: count = C(n-m+1,m); for n=10,m=3 this is C(8,3).

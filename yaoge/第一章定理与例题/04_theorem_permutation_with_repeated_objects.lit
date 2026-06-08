@@ -4,24 +4,14 @@
 # difficulty: medium
 # natural_language_idea: If n objects have repeated classes of sizes n1,n2,n3, the number of distinct orderings is n!/(n1!n2!n3!).
 # 中文题意: n 个对象按重复类别分成大小 n1,n2,n3 时，不同排列数为 n!/(n1!n2!n3!)。
-# 中文思路: 把重复对象排列公式作为抽象计数命题，具体除法计算单独验证。
+# 中文思路: 需要先证明不同标签排列到重复标签排列的商计数；当前只验证 PEPPER 型阶乘商数值。
 # litex_code: this file
-# proof_attempt: State the repeated-object permutation count through abstract factorial and a repeated permutation predicate.
+# proof_attempt: Keep the quotient-count theorem as proof debt and verify the arithmetic instance.
 # status: blocked
 # blocker: blocked_by_stdlib
-# notes: The three-class form is enough for the chapter examples; a general finite product version is future stdlib work.
-# verification_boundary: proof_debt 和 intended_result 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
+# notes: Needs quotient counting for indistinguishable repeated objects.
+# verification_boundary: proof_debt 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
 
-abstract_prop repeated_permutation_count(item, total_objects, class1, class2, class3, total_count)
-
-have factorial set
-have theorem_repeated_permutation_count set
-# proof_debt: know factorial $in fn(n R) R
-
-# proof_debt: know:
-# proof_debt:     forall n, n1, n2, n3 R:
-# proof_debt:         factorial(n1) * factorial(n2) * factorial(n3) != 0
-# proof_debt:         =>:
-# proof_debt:             $repeated_permutation_count(theorem_repeated_permutation_count, n, n1, n2, n3, factorial(n) / (factorial(n1) * factorial(n2) * factorial(n3)))
+# proof_debt: construct the quotient from labeled permutations by permutations inside equal-letter classes.
 
 6 * 5 * 4 * 3 * 2 * 1 / ((3 * 2 * 1) * (2 * 1) * 1) = 60

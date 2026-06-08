@@ -4,18 +4,14 @@
 # difficulty: easy
 # natural_language_idea: The word PEPPER has repeated letters P and E, so divide 6! by 3! and 2!.
 # 中文题意: 单词 PEPPER 中 P 重复 3 次、E 重复 2 次，因此排列数要除以 3! 和 2!。
-# 中文思路: 用重复字母排列计数谓词记录模型，并验证阶乘商等于 60。
+# 中文思路: 需要证明标号字母排列按相同字母置换取商；这里只验证阶乘商。
 # litex_code: this file
-# proof_attempt: Model repeated-letter arrangement abstractly and verify the arithmetic.
+# proof_attempt: Record quotient-count proof debt and verify the arithmetic.
 # status: blocked
 # blocker: blocked_by_stdlib
-# notes: Letter identity and repeated permutation theorem are abstract.
-# verification_boundary: proof_debt 和 intended_result 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
+# notes: Needs quotient counting for repeated letters.
+# verification_boundary: proof_debt 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
 
-abstract_prop word_arrangement_count(item, total_count)
+# proof_debt: prove distinct PEPPER words are labeled arrangements modulo permutations of equal letters.
 
-have example_3d_pepper_arrangements set
-# proof_debt: know $word_arrangement_count(example_3d_pepper_arrangements, (6 * 5 * 4 * 3 * 2 * 1) / ((3 * 2 * 1) * (2 * 1)))
-
-# intended_result: $word_arrangement_count(example_3d_pepper_arrangements, (6 * 5 * 4 * 3 * 2 * 1) / ((3 * 2 * 1) * (2 * 1)))
 (6 * 5 * 4 * 3 * 2 * 1) / ((3 * 2 * 1) * (2 * 1)) = 60

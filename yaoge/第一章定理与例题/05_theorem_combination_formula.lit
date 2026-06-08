@@ -4,27 +4,14 @@
 # difficulty: easy
 # natural_language_idea: The number of r-element subsets of an n-element set is C(n,r)=n!/((n-r)!r!).
 # 中文题意: n 元集合中 r 元子集的数量是 C(n,r)=n!/((n-r)!r!)。
-# 中文思路: 声明 choose 与 factorial 接口，记录组合数和阶乘公式之间的关系。
+# 中文思路: 组合公式需要 r 元子集对象、无序化商计数和阶乘接口；本文件只验证 C(20,3) 的阶乘商数值。
 # litex_code: this file
-# proof_attempt: Declare choose and factorial as abstract interfaces, then state their textbook relationship.
+# proof_attempt: Record the subset-count theorem as proof debt and verify the concrete arithmetic.
 # status: blocked
 # blocker: blocked_by_stdlib
-# notes: Proving this requires definitions of finite subsets, factorial, and choose.
-# verification_boundary: proof_debt 和 intended_result 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
+# notes: Needs finite subset cardinality and choose/factorial theorem.
+# verification_boundary: proof_debt 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
 
-abstract_prop subset_choice_count(item, object_count, chosen_count, total_count)
-
-have choose set
-have factorial set
-have theorem_combination_formula set
-# proof_debt: know choose $in fn(n, r R) R
-# proof_debt: know factorial $in fn(n R) R
-
-# proof_debt: know:
-# proof_debt:     forall n, r R:
-# proof_debt:         factorial(n - r) * factorial(r) != 0
-# proof_debt:         =>:
-# proof_debt:             $subset_choice_count(theorem_combination_formula, n, r, choose(n, r))
-# proof_debt:             choose(n, r) = factorial(n) / (factorial(n - r) * factorial(r))
+# proof_debt: define the set of r-element subsets and prove its cardinality formula.
 
 20 * 19 * 18 / (3 * 2 * 1) = 1140

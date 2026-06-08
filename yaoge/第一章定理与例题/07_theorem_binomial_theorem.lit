@@ -4,21 +4,15 @@
 # difficulty: medium
 # natural_language_idea: In (x+y)^n, the coefficient of x^k y^(n-k) is the number of ways to choose k x-factors.
 # 中文题意: 在 (x+y)^n 中，x^k y^(n-k) 的系数等于选择 k 个 x 因子的方式数。
-# 中文思路: 完整二项式定理先用抽象展开谓词表示，同时验证 n=3 的多项式展开。
+# 中文思路: 一般二项式定理需要有限和与组合系数；本文件验证 n=3 的展开恒等式。
 # litex_code: this file
-# proof_attempt: Represent the expansion theorem as an abstract predicate and verify the n=3 arithmetic shape separately.
+# proof_attempt: Keep the general theorem as proof debt and directly verify the cubic polynomial identity.
 # status: blocked
 # blocker: blocked_by_stdlib
-# notes: A finite-sum and polynomial-expansion interface would make the full theorem checkable.
-# verification_boundary: proof_debt 和 intended_result 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
+# notes: Needs finite sums and binomial coefficients for the general statement.
+# verification_boundary: proof_debt 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
 
-abstract_prop binomial_expansion(item, exponent, x, y)
-
-have theorem_binomial_theorem set
-
-# proof_debt: know:
-# proof_debt:     forall n, x, y R:
-# proof_debt:         $binomial_expansion(theorem_binomial_theorem, n, x, y)
+# proof_debt: prove the full finite-sum binomial theorem for arbitrary n.
 
 forall x, y R:
     (x + y)^3 = x^3 + 3 * x^2 * y + 3 * x * y^2 + y^3

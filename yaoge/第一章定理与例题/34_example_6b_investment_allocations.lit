@@ -4,20 +4,15 @@
 # difficulty: medium
 # natural_language_idea: Allocate 20 thousand-dollar units among 4 investments; optional reserve is a fifth category.
 # 中文题意: 将 20 个千美元单位分配到 4 个投资项；若允许不全投，则剩余现金作为第 5 类。
-# 中文思路: 用 stars-and-bars 计数，验证全投为 1771，可留现金为 10626。
+# 中文思路: 投资分配等价于非负整数解；当前保留 stars-and-bars 双射为 proof debt，并验证组合数数值。
 # litex_code: this file
-# proof_attempt: Use stars-and-bars results abstractly and verify the numerical choose values.
+# proof_attempt: Record allocation-solution bijection and stars-and-bars proof debt; verify arithmetic.
 # status: blocked
 # blocker: blocked_by_stdlib
-# notes: The allocation-to-solution bijection and choose function are abstract.
-# verification_boundary: proof_debt 和 intended_result 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
+# notes: Needs nonnegative solution count theorem.
+# verification_boundary: proof_debt 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
 
-abstract_prop investment_allocation_count(item, total_count)
-
-have example_6b_all_invested set
-have example_6b_optional_reserve set
-# proof_debt: know $investment_allocation_count(example_6b_all_invested, 1771)
-# proof_debt: know $investment_allocation_count(example_6b_optional_reserve, 10626)
+# proof_debt: prove allocations are counted by nonnegative integer solutions and apply stars-and-bars.
 
 23 * 22 * 21 / (3 * 2 * 1) = 1771
 24 * 23 * 22 * 21 / (4 * 3 * 2 * 1) = 10626

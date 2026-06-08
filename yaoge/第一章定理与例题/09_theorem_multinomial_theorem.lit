@@ -4,21 +4,15 @@
 # difficulty: medium
 # natural_language_idea: In a multinomial expansion, each coefficient counts the ways to choose which factors contribute each variable.
 # 中文题意: 多项式展开中，每个系数表示从各因子中选择对应变量的方式数。
-# 中文思路: 完整多项式定理用抽象谓词表示，并验证三项平方展开这个小实例。
+# 中文思路: 一般多项式定理需要多指标有限和；本文件验证三项平方展开。
 # litex_code: this file
-# proof_attempt: Represent the full theorem as an abstract expansion predicate; verify a small trinomial square instance.
+# proof_attempt: Keep the general theorem as proof debt and directly verify a trinomial square identity.
 # status: blocked
 # blocker: blocked_by_stdlib
-# notes: Full formalization needs finite multi-index sums and multinomial coefficients.
-# verification_boundary: proof_debt 和 intended_result 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
+# notes: Needs finite multi-index sums and multinomial coefficients.
+# verification_boundary: proof_debt 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
 
-abstract_prop multinomial_expansion(item, exponent, variable_count)
-
-have theorem_multinomial_theorem set
-
-# proof_debt: know:
-# proof_debt:     forall n, r R:
-# proof_debt:         $multinomial_expansion(theorem_multinomial_theorem, n, r)
+# proof_debt: prove the full multinomial finite-sum theorem.
 
 forall x1, x2, x3 R:
     (x1 + x2 + x3)^2 = x1^2 + x2^2 + x3^2 + 2 * x1 * x2 + 2 * x1 * x3 + 2 * x2 * x3

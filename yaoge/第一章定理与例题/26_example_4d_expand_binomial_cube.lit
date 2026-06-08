@@ -4,12 +4,12 @@
 # difficulty: easy
 # natural_language_idea: Apply the binomial theorem with n=3.
 # 中文题意: 使用二项式定理展开 (x+y)^3。
-# 中文思路: 直接让 Litex 验证三次多项式恒等式。
+# 中文思路: 这是纯多项式恒等式，可直接由 Litex 验证。
 # litex_code: this file
 # proof_attempt: Directly verify the polynomial identity.
 # status: checkable
-# blocker:
-# notes: This file has no combinatorial proof debt; it is a polynomial identity.
+# blocker: 
+# notes: No combinatorial proof debt remains in this concrete expansion.
 
 forall x, y R:
     (x + y)^3 = x^3 + 3 * x^2 * y + 3 * x * y^2 + y^3
