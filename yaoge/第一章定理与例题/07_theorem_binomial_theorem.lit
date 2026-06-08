@@ -3,6 +3,8 @@
 # topic: binomial theorem
 # difficulty: medium
 # natural_language_idea: In (x+y)^n, the coefficient of x^k y^(n-k) is the number of ways to choose k x-factors.
+# 中文题意: 在 (x+y)^n 中，x^k y^(n-k) 的系数等于选择 k 个 x 因子的方式数。
+# 中文思路: 完整二项式定理先用抽象展开谓词表示，同时验证 n=3 的多项式展开。
 # litex_code: this file
 # proof_attempt: Represent the expansion theorem as an abstract predicate and verify the n=3 arithmetic shape separately.
 # status: translated

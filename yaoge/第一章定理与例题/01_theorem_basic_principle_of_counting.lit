@@ -3,6 +3,8 @@
 # topic: combinatorial analysis
 # difficulty: easy
 # natural_language_idea: A two-stage choice with m options first and n options second has m*n outcomes.
+# 中文题意: 两步选择中，第一步有 m 种选法，第二步有 n 种选法，则总共有 m*n 种结果。
+# 中文思路: 把计数规则作为抽象谓词记录，并直接验证具体乘法算术。
 # litex_code: this file
 # proof_attempt: Model the counting interpretation as an abstract predicate; verify concrete arithmetic instances directly.
 # status: translated

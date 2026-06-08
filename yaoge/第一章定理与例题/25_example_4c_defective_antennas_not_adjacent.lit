@@ -3,6 +3,8 @@
 # topic: combinations
 # difficulty: medium
 # natural_language_idea: Place m defective antennas in n slots with at least one functional antenna between defectives.
+# 中文题意: 在 n 个位置放 m 个坏天线，要求任意两个坏天线不相邻。
+# 中文思路: 用间隔变换得到 shifted combination 公式 C(n-m+1,m)。
 # litex_code: this file
 # proof_attempt: State the gap-transformed count using abstract choose.
 # status: translated

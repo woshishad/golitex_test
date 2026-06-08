@@ -3,6 +3,8 @@
 # topic: combinations
 # difficulty: easy
 # natural_language_idea: Split r-subsets by whether a fixed element is included to get Pascal's identity.
+# 中文题意: 按某个固定元素是否被选入，把 r 元子集分成两类，得到 Pascal 恒等式。
+# 中文思路: 将 C(n,r)=C(n-1,r-1)+C(n-1,r) 作为 choose 的抽象恒等式记录。
 # litex_code: this file
 # proof_attempt: State Pascal's identity for an abstract choose function.
 # status: translated

@@ -3,6 +3,8 @@
 # topic: multinomial counting
 # difficulty: medium
 # natural_language_idea: Dividing n distinct objects into labeled groups of sizes n1,n2,n3 gives n!/(n1!n2!n3!) possibilities.
+# 中文题意: 将 n 个不同对象分到有标号的三组，组大小为 n1,n2,n3，方法数是 n!/(n1!n2!n3!)。
+# 中文思路: 用抽象谓词表达有标号分组计数，具体阶乘商的数值计算单独验证。
 # litex_code: this file
 # proof_attempt: State the labeled-group formula through abstract factorial and group-count predicate.
 # status: translated

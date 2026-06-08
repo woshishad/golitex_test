@@ -3,6 +3,8 @@
 # topic: integer solutions
 # difficulty: medium
 # natural_language_idea: Nonnegative solutions become positive solutions after adding 1 to every variable.
+# 中文题意: 非负整数解可通过给每个变量加 1 转化为正整数解。
+# 中文思路: 用抽象计数谓词记录非负解数量 C(n+r-1,r-1)。
 # litex_code: this file
 # proof_attempt: State the nonnegative stars-and-bars count using abstract choose.
 # status: translated

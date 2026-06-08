@@ -3,6 +3,8 @@
 # topic: permutations
 # difficulty: medium
 # natural_language_idea: A complete knockout tournament outcome is determined by the order in which players are eliminated and the champion.
+# 中文题意: 8 人淘汰赛中，首轮结果和完整比赛结果都可以用排列/配对计数描述。
+# 中文思路: 将比赛结构作为抽象计数模型，并验证首轮 1680 与完整比赛 40320。
 # litex_code: this file
 # proof_attempt: Model initial-round and complete-tournament counts abstractly; verify the concrete arithmetic.
 # status: translated

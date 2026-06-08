@@ -3,6 +3,8 @@
 # topic: basic counting
 # difficulty: easy
 # natural_language_idea: Choose one of 10 women and then one of her 3 children.
+# 中文题意: 从 10 位女性中选 1 位，再从她的 3 个孩子中选 1 个。
+# 中文思路: 两步选择相乘，验证 10*3=30。
 # litex_code: this file
 # proof_attempt: Use the basic counting product and verify the arithmetic.
 # status: translated

@@ -3,6 +3,8 @@
 # topic: multinomial theorem
 # difficulty: medium
 # natural_language_idea: In a multinomial expansion, each coefficient counts the ways to choose which factors contribute each variable.
+# 中文题意: 多项式展开中，每个系数表示从各因子中选择对应变量的方式数。
+# 中文思路: 完整多项式定理用抽象谓词表示，并验证三项平方展开这个小实例。
 # litex_code: this file
 # proof_attempt: Represent the full theorem as an abstract expansion predicate; verify a small trinomial square instance.
 # status: translated

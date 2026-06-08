@@ -3,6 +3,8 @@
 # topic: permutations
 # difficulty: medium
 # natural_language_idea: Arrange subject blocks, then arrange books within each subject block.
+# 中文题意: 同一主题的书必须放在一起，先排主题块，再排每个主题内部的书。
+# 中文思路: 将块排列和块内排列相乘，并验证乘积为 6912。
 # litex_code: this file
 # proof_attempt: Use an abstract block-arrangement count and verify the product.
 # status: translated

@@ -3,6 +3,8 @@
 # topic: permutations
 # difficulty: easy
 # natural_language_idea: The number of linear orderings of n distinct objects is n factorial.
+# 中文题意: n 个互不相同对象的线性排列数是 n!。
+# 中文思路: 用 factorial 表示阶乘接口，并验证 9! 的展开计算。
 # litex_code: this file
 # proof_attempt: Declare factorial as the result interface for permutations; verify concrete expanded factorial arithmetic.
 # status: translated

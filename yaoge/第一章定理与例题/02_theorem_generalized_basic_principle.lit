@@ -3,6 +3,8 @@
 # topic: combinatorial analysis
 # difficulty: easy
 # natural_language_idea: A finite multi-stage choice has product of stage counts as its number of outcomes.
+# 中文题意: 有限多步选择的总结果数等于每一步选择数的乘积。
+# 中文思路: 用四步选择代表多步乘法原则；真正的任意长度乘积还需要标准库支持。
 # litex_code: this file
 # proof_attempt: Formalize a four-stage representative form; the fully variable-length product needs a counting library.
 # status: translated

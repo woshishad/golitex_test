@@ -3,6 +3,8 @@
 # topic: integer solutions
 # difficulty: medium
 # natural_language_idea: Positive solutions of x1+...+xr=n correspond to placing r-1 dividers among n-1 gaps.
+# 中文题意: x1+...+xr=n 的正整数解个数等于在 n-1 个空隙中放 r-1 个隔板。
+# 中文思路: 用 stars-and-bars 的抽象计数命题表达结果 C(n-1,r-1)。
 # litex_code: this file
 # proof_attempt: State the stars-and-bars count for positive integer solutions using abstract choose.
 # status: translated

@@ -3,6 +3,8 @@
 # topic: subsets
 # difficulty: easy
 # natural_language_idea: For each of n elements, choose whether it is in the subset; exclude the empty set for nonempty subsets.
+# 中文题意: n 元集合的每个元素都可以选择是否进入子集；非空子集要排除空集。
+# 中文思路: 用抽象子集计数谓词表示 2^n 和 2^n-1，并验证 n=5 的数值。
 # litex_code: this file
 # proof_attempt: State subset and nonempty-subset counts abstractly; verify a concrete arithmetic instance.
 # status: translated

@@ -3,6 +3,8 @@
 # topic: multinomial counting
 # difficulty: easy
 # natural_language_idea: Split 10 officers into labeled groups of sizes 5,2,3.
+# 中文题意: 将 10 名军官分成有标号的三组，大小分别为 5、2、3。
+# 中文思路: 使用多项式系数/有标号分组公式，并验证阶乘商为 2520。
 # litex_code: this file
 # proof_attempt: Use the labeled-group multinomial count and verify the arithmetic.
 # status: translated

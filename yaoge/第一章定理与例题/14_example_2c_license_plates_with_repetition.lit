@@ -3,6 +3,8 @@
 # topic: basic counting
 # difficulty: easy
 # natural_language_idea: Three letters and four digits are chosen independently with repetition allowed.
+# 中文题意: 车牌由 3 个字母和 4 个数字组成，允许重复。
+# 中文思路: 每个位置独立选择，验证 26^3*10^4 的数值。
 # litex_code: this file
 # proof_attempt: Model the plate count abstractly and verify 26^3*10^4.
 # status: translated

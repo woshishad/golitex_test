@@ -3,6 +3,8 @@
 # topic: permutations
 # difficulty: easy
 # natural_language_idea: A batting order is a permutation of 9 players.
+# 中文题意: 9 名球员的打击顺序就是 9 个不同对象的排列。
+# 中文思路: 用排列计数谓词记录模型，并验证 9! 的展开值。
 # litex_code: this file
 # proof_attempt: Use an abstract permutation count and verify the expanded factorial.
 # status: translated

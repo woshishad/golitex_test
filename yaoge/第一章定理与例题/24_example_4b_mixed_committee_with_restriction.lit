@@ -3,6 +3,8 @@
 # topic: combinations
 # difficulty: medium
 # natural_language_idea: Choose 2 women from 5 and 3 men from 7; subtract committees containing both feuding men.
+# 中文题意: 从 5 名女性选 2 名、7 名男性选 3 名；若两名男性不能同在，则要扣除同时包含二人的情况。
+# 中文思路: 先算无限制方案数 350，再减去冲突方案数得到 300。
 # litex_code: this file
 # proof_attempt: Model unrestricted and restricted committee counts, then verify the arithmetic.
 # status: translated

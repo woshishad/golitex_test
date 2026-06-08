@@ -3,6 +3,8 @@
 # topic: combinations
 # difficulty: medium
 # natural_language_idea: Split 10 children into two unlabeled teams; divide the labeled-team count by 2.
+# 中文题意: 将 10 个孩子分成两个无标号的 5 人队。
+# 中文思路: 在有标号分队基础上再除以 2!，验证结果为 126。
 # litex_code: this file
 # proof_attempt: Model unlabeled teams abstractly and verify the arithmetic.
 # status: translated

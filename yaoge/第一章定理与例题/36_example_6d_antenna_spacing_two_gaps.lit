@@ -3,6 +3,8 @@
 # topic: combinations
 # difficulty: medium
 # natural_language_idea: Spacing constraints between defective antennas translate to shifted combinations.
+# 中文题意: 坏天线之间至少隔 1 个或 2 个好天线时，可转化为位移后的组合计数。
+# 中文思路: 记录一格间隔公式 C(n-m+1,m) 和两格间隔公式 C(n-2m+2,m)。
 # litex_code: this file
 # proof_attempt: State the one-gap and two-gap formulas through abstract choose.
 # status: translated

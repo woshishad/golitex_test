@@ -3,6 +3,8 @@
 # topic: repeated permutations
 # difficulty: easy
 # natural_language_idea: The word PEPPER has repeated letters P and E, so divide 6! by 3! and 2!.
+# 中文题意: 单词 PEPPER 中 P 重复 3 次、E 重复 2 次，因此排列数要除以 3! 和 2!。
+# 中文思路: 用重复字母排列计数谓词记录模型，并验证阶乘商等于 60。
 # litex_code: this file
 # proof_attempt: Model repeated-letter arrangement abstractly and verify the arithmetic.
 # status: translated

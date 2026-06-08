@@ -3,6 +3,8 @@
 # topic: functions
 # difficulty: easy
 # natural_language_idea: Each of n input points independently chooses value 0 or 1, so there are 2^n functions.
+# 中文题意: n 个输入点分别取 0 或 1，因此二值函数总数是 2^n。
+# 中文思路: 用抽象函数计数谓词表达一般结论，并验证 n=5 时 2^5=32。
 # litex_code: this file
 # proof_attempt: State the generic function count through an abstract predicate.
 # status: translated

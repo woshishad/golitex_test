@@ -3,6 +3,8 @@
 # topic: basic counting
 # difficulty: easy
 # natural_language_idea: Choose one representative from classes of sizes 3,4,5,2.
+# 中文题意: 从人数分别为 3、4、5、2 的四个班中各选 1 名代表。
+# 中文思路: 四步选择相乘，验证 3*4*5*2=120。
 # litex_code: this file
 # proof_attempt: Use a four-stage abstract count and verify the product.
 # status: translated

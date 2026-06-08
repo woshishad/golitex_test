@@ -3,6 +3,8 @@
 # topic: basic counting
 # difficulty: easy
 # natural_language_idea: Choose three distinct letters and four distinct digits in ordered positions.
+# 中文题意: 车牌中 3 个字母互不重复，4 个数字也互不重复。
+# 中文思路: 按位置依次选择，验证 26*25*24*10*9*8*7。
 # litex_code: this file
 # proof_attempt: Model the no-repetition plate count abstractly and verify the product.
 # status: translated

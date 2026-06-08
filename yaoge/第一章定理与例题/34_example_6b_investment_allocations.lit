@@ -3,6 +3,8 @@
 # topic: integer solutions
 # difficulty: medium
 # natural_language_idea: Allocate 20 thousand-dollar units among 4 investments; optional reserve is a fifth category.
+# 中文题意: 将 20 个千美元单位分配到 4 个投资项；若允许不全投，则剩余现金作为第 5 类。
+# 中文思路: 用 stars-and-bars 计数，验证全投为 1771，可留现金为 10626。
 # litex_code: this file
 # proof_attempt: Use stars-and-bars results abstractly and verify the numerical choose values.
 # status: translated

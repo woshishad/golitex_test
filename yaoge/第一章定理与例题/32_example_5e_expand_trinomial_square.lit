@@ -3,6 +3,8 @@
 # topic: multinomial theorem
 # difficulty: easy
 # natural_language_idea: Apply the multinomial theorem to (x1+x2+x3)^2.
+# 中文题意: 使用多项式定理展开 (x1+x2+x3)^2。
+# 中文思路: 直接让 Litex 验证三项平方展开恒等式。
 # litex_code: this file
 # proof_attempt: Directly verify the polynomial identity.
 # status: checkable

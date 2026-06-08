@@ -3,6 +3,8 @@
 # topic: combinations
 # difficulty: easy
 # natural_language_idea: A 3-person committee from 20 people is a 3-subset.
+# 中文题意: 从 20 人中选 3 人组成委员会，就是选一个 3 元子集。
+# 中文思路: 用 choose 表示组合数，并验证 C(20,3)=1140 的阶乘计算。
 # litex_code: this file
 # proof_attempt: Model committee choice through choose and verify the factorial calculation.
 # status: translated

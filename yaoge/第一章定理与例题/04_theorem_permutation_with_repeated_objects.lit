@@ -3,6 +3,8 @@
 # topic: permutations
 # difficulty: medium
 # natural_language_idea: If n objects have repeated classes of sizes n1,n2,n3, the number of distinct orderings is n!/(n1!n2!n3!).
+# 中文题意: n 个对象按重复类别分成大小 n1,n2,n3 时，不同排列数为 n!/(n1!n2!n3!)。
+# 中文思路: 把重复对象排列公式作为抽象计数命题，具体除法计算单独验证。
 # litex_code: this file
 # proof_attempt: State the repeated-object permutation count through abstract factorial and a repeated permutation predicate.
 # status: translated

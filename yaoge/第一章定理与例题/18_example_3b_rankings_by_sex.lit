@@ -3,6 +3,8 @@
 # topic: permutations
 # difficulty: easy
 # natural_language_idea: Rank all 10 people, or rank 6 men and 4 women separately.
+# 中文题意: 可以给全部 10 人排名，也可以分别给 6 名男性和 4 名女性排名。
+# 中文思路: 分别验证 10! 与 6!*4! 的展开计算。
 # litex_code: this file
 # proof_attempt: Model both ranking counts and verify their arithmetic values.
 # status: translated

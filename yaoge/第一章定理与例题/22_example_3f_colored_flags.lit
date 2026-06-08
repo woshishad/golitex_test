@@ -3,6 +3,8 @@
 # topic: repeated permutations
 # difficulty: easy
 # natural_language_idea: Flags of the same color are indistinguishable, so divide 9! by 4!3!2!.
+# 中文题意: 9 面旗中同色旗不可区分，颜色数量为 4、3、2。
+# 中文思路: 用重复对象排列公式，验证 9!/(4!3!2!)=1260。
 # litex_code: this file
 # proof_attempt: Model color-sequence counting abstractly and verify the arithmetic.
 # status: translated

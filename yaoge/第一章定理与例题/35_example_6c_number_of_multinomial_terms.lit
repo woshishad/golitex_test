@@ -3,6 +3,8 @@
 # topic: multinomial theorem
 # difficulty: medium
 # natural_language_idea: Terms in (x1+...+xr)^n correspond to nonnegative exponent vectors summing to n.
+# 中文题意: (x1+...+xr)^n 的项对应非负指数向量，其坐标和为 n。
+# 中文思路: 将项数转化为非负整数解数量，记录公式 C(n+r-1,r-1)。
 # litex_code: this file
 # proof_attempt: State the term count through abstract choose.
 # status: translated
