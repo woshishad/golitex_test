@@ -1,0 +1,27 @@
+//! Surface syntax for `by …` proof statements (one submodule per form).
+mod antisymmetric_prop;
+mod axiom_of_choice;
+mod cases;
+mod contra;
+mod enumerate;
+mod extension;
+mod fn_cart_tuple;
+mod for_stmt;
+mod induc;
+mod reflexive_prop;
+mod symmetric_prop;
+mod transitive_prop;
+mod zorn_lemma;
+pub use antisymmetric_prop::ByAntisymmetricPropStmt;
+pub use axiom_of_choice::ByAxiomOfChoiceStmt;
+pub use cases::ByCasesStmt;
+pub use contra::ByContraStmt;
+pub use enumerate::ByEnumerateFiniteSetStmt;
+pub use extension::ByExtensionStmt;
+pub use fn_cart_tuple::{ByFnAsSetStmt, ByFnSetAsSetStmt, ByTupleAsSetStmt};
+pub use for_stmt::{ByForExpansion, ByForStmt, ClosedRangeOrRange};
+pub use induc::ByInducStmt;
+pub use reflexive_prop::ByReflexivePropStmt;
+pub use symmetric_prop::BySymmetricPropStmt;
+pub use transitive_prop::ByTransitivePropStmt;
+pub use zorn_lemma::ByZornLemmaStmt;

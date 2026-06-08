@@ -1,0 +1,42 @@
+# Rust build
+/target/
+binary/
+
+# Generated or local dataset workspaces
+scripts/*
+!scripts/update_external_repos.sh
+!scripts/build_dataset_current_data.py
+!scripts/dataset_review_dashboard.html
+examples/hidden
+examples/testings/.order
+tools/
+The-Mechanics-of-Litex-Proof/
+mathematics_in_litex/
+scripts/gsm8k-litex/
+MATH-500-litex/
+litex-minif2f/
+test-litex/
+litex_agent/
+tmp/
+std/todo.md
+std/*/todo.md
+todo.md
+
+# Python and local environments
+.venv/
+.venv-mmqa/
+
+# Editor and OS files
+.vscode/
+.cursor/
+.idea/
+.DS_Store
+**/.DS_Store
+
+# Local secrets and personal notes
+.dist/
+cursor-output.local.md
+LITEX_CURSOR_LOCAL.md
+
+# Local source PDFs
+/*.pdf

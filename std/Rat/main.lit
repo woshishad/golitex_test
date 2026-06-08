@@ -1,0 +1,80 @@
+# Rational numerator and denominator theorem fragments.
+#
+# Litex already has the rational set `Q`. This file adds the namespace-shaped
+# numerator/denominator surface exposed as `num`, `den`, `num_div_den`, and
+# `den_nz`.
+
+import Nat
+import Int
+
+have num fn(q Q) Z
+have den fn(q Q) N_pos
+
+prop reduced(q Q):
+    $Nat::Coprime(Int::natAbs(num(q)), den(q))
+    forall d N_pos:
+        num(q) % d = 0
+        den(q) % d = 0
+        =>:
+            d = 1
+
+know:
+    forall q Q:
+        den(q) != 0
+        q = num(q) / den(q)
+        $reduced(q)
+        $Nat::Coprime(Int::natAbs(num(q)), den(q))
+
+    forall q Q:
+        q > 0
+        =>:
+            exist p N_pos, d N_pos st {q = p / d}
+
+    forall q1, q2 Q:
+        num(q1) = num(q2)
+        den(q1) = den(q2)
+        =>:
+            q1 = q2
+
+# Mathlib: Rat.den_nz
+thm rational_denominator_nonzero, den_nz:
+    prove:
+        forall q Q:
+            den(q) != 0
+    den(q) != 0
+
+# Mathlib: Rat.num_div_den
+thm rational_equals_numerator_divided_by_denominator, num_div_den:
+    prove:
+        forall q Q:
+            den(q) != 0
+            =>:
+                q = num(q) / den(q)
+    den(q) != 0
+    q = num(q) / den(q)
+
+# A positive rational can be represented as a ratio of positive natural numbers.
+thm positive_rational_as_positive_natural_ratio, pos_nat_div:
+    prove:
+        forall q Q:
+            q > 0
+            =>:
+                exist p N_pos, d N_pos st {q = p / d}
+    exist p N_pos, d N_pos st {q = p / d}
+
+# Mathlib: Rat.num_den_coprime
+thm numerator_denominator_coprime, num_den_coprime:
+    prove:
+        forall q Q:
+            $Nat::Coprime(Int::natAbs(num(q)), den(q))
+    $Nat::Coprime(Int::natAbs(num(q)), den(q))
+
+# Mathlib: Rat.ext-style reasoning by reduced numerator and denominator.
+thm rational_extensionality_by_num_den, ext:
+    prove:
+        forall q1, q2 Q:
+            num(q1) = num(q2)
+            den(q1) = den(q2)
+            =>:
+                q1 = q2
+    q1 = q2
