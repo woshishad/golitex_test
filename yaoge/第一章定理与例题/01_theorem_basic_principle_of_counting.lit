@@ -1,0 +1,21 @@
+# id: chapter1_theorem_01
+# source: A First Course in Probability, Chapter 1
+# topic: combinatorial analysis
+# difficulty: easy
+# natural_language_idea: A two-stage choice with m options first and n options second has m*n outcomes.
+# litex_code: this file
+# proof_attempt: Model the counting interpretation as an abstract predicate; verify concrete arithmetic instances directly.
+# status: translated
+# blocker: blocked_by_stdlib
+# notes: A combinatorics counting library is needed to prove the abstract counting predicate itself.
+
+abstract_prop two_stage_count(item, first_count, second_count, total_count)
+
+have theorem_basic_principle_of_counting set
+
+know:
+    forall m, n R:
+        $two_stage_count(theorem_basic_principle_of_counting, m, n, m * n)
+
+$two_stage_count(theorem_basic_principle_of_counting, 3, 10, 3 * 10)
+3 * 10 = 30

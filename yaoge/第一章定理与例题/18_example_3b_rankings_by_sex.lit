@@ -1,0 +1,20 @@
+# id: chapter1_example_3b
+# source: A First Course in Probability, Chapter 1
+# topic: permutations
+# difficulty: easy
+# natural_language_idea: Rank all 10 people, or rank 6 men and 4 women separately.
+# litex_code: this file
+# proof_attempt: Model both ranking counts and verify their arithmetic values.
+# status: translated
+# blocker: blocked_by_stdlib
+# notes: Ranking interpretation is abstract.
+
+abstract_prop ranking_count(item, total_count)
+
+have example_3b_all_rankings set
+have example_3b_separate_rankings set
+know $ranking_count(example_3b_all_rankings, 10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1)
+know $ranking_count(example_3b_separate_rankings, (6 * 5 * 4 * 3 * 2 * 1) * (4 * 3 * 2 * 1))
+
+10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1 = 3628800
+(6 * 5 * 4 * 3 * 2 * 1) * (4 * 3 * 2 * 1) = 17280

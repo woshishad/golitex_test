@@ -1,0 +1,13 @@
+# id: chapter1_example_5e
+# source: A First Course in Probability, Chapter 1
+# topic: multinomial theorem
+# difficulty: easy
+# natural_language_idea: Apply the multinomial theorem to (x1+x2+x3)^2.
+# litex_code: this file
+# proof_attempt: Directly verify the polynomial identity.
+# status: checkable
+# blocker:
+# notes: This file has no combinatorial proof debt; it is a polynomial identity.
+
+forall x1, x2, x3 R:
+    (x1 + x2 + x3)^2 = x1^2 + x2^2 + x3^2 + 2 * x1 * x2 + 2 * x1 * x3 + 2 * x2 * x3

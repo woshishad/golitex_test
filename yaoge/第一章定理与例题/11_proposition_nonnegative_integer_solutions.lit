@@ -1,0 +1,22 @@
+# id: chapter1_theorem_11
+# source: A First Course in Probability, Chapter 1
+# topic: integer solutions
+# difficulty: medium
+# natural_language_idea: Nonnegative solutions become positive solutions after adding 1 to every variable.
+# litex_code: this file
+# proof_attempt: State the nonnegative stars-and-bars count using abstract choose.
+# status: translated
+# blocker: blocked_by_stdlib
+# notes: A formal proof needs a tuple transformation and finite counting.
+
+abstract_prop nonnegative_solution_count(item, variable_count, sum_value, total_count)
+
+have choose set
+have proposition_nonnegative_integer_solutions set
+know choose $in fn(n, r R) R
+
+know:
+    forall r, n R:
+        $nonnegative_solution_count(proposition_nonnegative_integer_solutions, r, n, choose(n + r - 1, r - 1))
+
+$nonnegative_solution_count(proposition_nonnegative_integer_solutions, 2, 3, choose((3 + 2) - 1, 2 - 1))

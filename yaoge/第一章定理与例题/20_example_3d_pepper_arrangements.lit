@@ -1,0 +1,18 @@
+# id: chapter1_example_3d
+# source: A First Course in Probability, Chapter 1
+# topic: repeated permutations
+# difficulty: easy
+# natural_language_idea: The word PEPPER has repeated letters P and E, so divide 6! by 3! and 2!.
+# litex_code: this file
+# proof_attempt: Model repeated-letter arrangement abstractly and verify the arithmetic.
+# status: translated
+# blocker: blocked_by_stdlib
+# notes: Letter identity and repeated permutation theorem are abstract.
+
+abstract_prop word_arrangement_count(item, total_count)
+
+have example_3d_pepper_arrangements set
+know $word_arrangement_count(example_3d_pepper_arrangements, (6 * 5 * 4 * 3 * 2 * 1) / ((3 * 2 * 1) * (2 * 1)))
+
+$word_arrangement_count(example_3d_pepper_arrangements, (6 * 5 * 4 * 3 * 2 * 1) / ((3 * 2 * 1) * (2 * 1)))
+(6 * 5 * 4 * 3 * 2 * 1) / ((3 * 2 * 1) * (2 * 1)) = 60

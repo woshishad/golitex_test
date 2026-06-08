@@ -1,0 +1,18 @@
+# id: chapter1_example_5c
+# source: A First Course in Probability, Chapter 1
+# topic: combinations
+# difficulty: medium
+# natural_language_idea: Split 10 children into two unlabeled teams; divide the labeled-team count by 2.
+# litex_code: this file
+# proof_attempt: Model unlabeled teams abstractly and verify the arithmetic.
+# status: translated
+# blocker: blocked_by_stdlib
+# notes: The unlabeled quotient by team swap is abstract.
+
+abstract_prop unlabeled_team_count(item, total_count)
+
+have example_5c_children_into_unlabeled_teams set
+know $unlabeled_team_count(example_5c_children_into_unlabeled_teams, (10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1) / ((5 * 4 * 3 * 2 * 1) * (5 * 4 * 3 * 2 * 1) * (2 * 1)))
+
+$unlabeled_team_count(example_5c_children_into_unlabeled_teams, (10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1) / ((5 * 4 * 3 * 2 * 1) * (5 * 4 * 3 * 2 * 1) * (2 * 1)))
+(10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1) / ((5 * 4 * 3 * 2 * 1) * (5 * 4 * 3 * 2 * 1) * (2 * 1)) = 126

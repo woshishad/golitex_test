@@ -1,0 +1,24 @@
+# id: chapter1_example_4e
+# source: A First Course in Probability, Chapter 1
+# topic: subsets
+# difficulty: easy
+# natural_language_idea: For each of n elements, choose whether it is in the subset; exclude the empty set for nonempty subsets.
+# litex_code: this file
+# proof_attempt: State subset and nonempty-subset counts abstractly; verify a concrete arithmetic instance.
+# status: translated
+# blocker: blocked_by_stdlib
+# notes: Finite powerset cardinality is needed for a full proof.
+
+abstract_prop subset_count(item, element_count, total_count)
+abstract_prop nonempty_subset_count(item, element_count, total_count)
+
+have example_4e_subsets_of_n_element_set set
+
+know:
+    forall n R:
+        $subset_count(example_4e_subsets_of_n_element_set, n, 2^n)
+        $nonempty_subset_count(example_4e_subsets_of_n_element_set, n, 2^n - 1)
+
+$subset_count(example_4e_subsets_of_n_element_set, 5, 2^5)
+2^5 = 32
+2^5 - 1 = 31

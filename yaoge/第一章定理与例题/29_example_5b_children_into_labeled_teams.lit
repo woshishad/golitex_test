@@ -1,0 +1,18 @@
+# id: chapter1_example_5b
+# source: A First Course in Probability, Chapter 1
+# topic: combinations
+# difficulty: easy
+# natural_language_idea: Split 10 children into two labeled teams of 5 and 5.
+# litex_code: this file
+# proof_attempt: Model labeled teams abstractly and verify the arithmetic.
+# status: translated
+# blocker: blocked_by_stdlib
+# notes: The team-label counting interpretation is abstract.
+
+abstract_prop labeled_team_count(item, total_count)
+
+have example_5b_children_into_labeled_teams set
+know $labeled_team_count(example_5b_children_into_labeled_teams, (10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1) / ((5 * 4 * 3 * 2 * 1) * (5 * 4 * 3 * 2 * 1)))
+
+$labeled_team_count(example_5b_children_into_labeled_teams, (10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1) / ((5 * 4 * 3 * 2 * 1) * (5 * 4 * 3 * 2 * 1)))
+(10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1) / ((5 * 4 * 3 * 2 * 1) * (5 * 4 * 3 * 2 * 1)) = 252

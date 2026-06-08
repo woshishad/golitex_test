@@ -1,0 +1,21 @@
+# id: chapter1_example_2d
+# source: A First Course in Probability, Chapter 1
+# topic: functions
+# difficulty: easy
+# natural_language_idea: Each of n input points independently chooses value 0 or 1, so there are 2^n functions.
+# litex_code: this file
+# proof_attempt: State the generic function count through an abstract predicate.
+# status: translated
+# blocker: blocked_by_stdlib
+# notes: A formal proof needs finite function-space cardinality.
+
+abstract_prop binary_function_count(item, point_count, total_count)
+
+have example_2d_binary_functions_on_n_points set
+
+know:
+    forall n R:
+        $binary_function_count(example_2d_binary_functions_on_n_points, n, 2^n)
+
+$binary_function_count(example_2d_binary_functions_on_n_points, 5, 2^5)
+2^5 = 32

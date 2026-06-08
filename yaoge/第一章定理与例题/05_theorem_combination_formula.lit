@@ -1,0 +1,27 @@
+# id: chapter1_theorem_05
+# source: A First Course in Probability, Chapter 1
+# topic: combinations
+# difficulty: easy
+# natural_language_idea: The number of r-element subsets of an n-element set is C(n,r)=n!/((n-r)!r!).
+# litex_code: this file
+# proof_attempt: Declare choose and factorial as abstract interfaces, then state their textbook relationship.
+# status: translated
+# blocker: blocked_by_stdlib
+# notes: Proving this requires definitions of finite subsets, factorial, and choose.
+
+abstract_prop subset_choice_count(item, object_count, chosen_count, total_count)
+
+have choose set
+have factorial set
+have theorem_combination_formula set
+know choose $in fn(n, r R) R
+know factorial $in fn(n R) R
+
+know:
+    forall n, r R:
+        factorial(n - r) * factorial(r) != 0
+        =>:
+            $subset_choice_count(theorem_combination_formula, n, r, choose(n, r))
+            choose(n, r) = factorial(n) / (factorial(n - r) * factorial(r))
+
+20 * 19 * 18 / (3 * 2 * 1) = 1140

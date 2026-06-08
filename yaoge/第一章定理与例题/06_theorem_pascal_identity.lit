@@ -1,0 +1,19 @@
+# id: chapter1_theorem_06
+# source: A First Course in Probability, Chapter 1
+# topic: combinations
+# difficulty: easy
+# natural_language_idea: Split r-subsets by whether a fixed element is included to get Pascal's identity.
+# litex_code: this file
+# proof_attempt: State Pascal's identity for an abstract choose function.
+# status: translated
+# blocker: blocked_by_stdlib
+# notes: The combinatorial partition proof is not formalized because choose is abstract.
+
+have choose set
+know choose $in fn(n, r R) R
+
+know:
+    forall n, r R:
+        choose(n, r) = choose(n - 1, r - 1) + choose(n - 1, r)
+
+choose(5, 2) = choose(4, 1) + choose(4, 2)

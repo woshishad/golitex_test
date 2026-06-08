@@ -1,0 +1,18 @@
+# id: chapter1_example_2c
+# source: A First Course in Probability, Chapter 1
+# topic: basic counting
+# difficulty: easy
+# natural_language_idea: Three letters and four digits are chosen independently with repetition allowed.
+# litex_code: this file
+# proof_attempt: Model the plate count abstractly and verify 26^3*10^4.
+# status: translated
+# blocker: blocked_by_stdlib
+# notes: The product structure is abstract; the arithmetic is checkable.
+
+abstract_prop license_plate_count(item, total_count)
+
+have example_2c_license_plates_with_repetition set
+know $license_plate_count(example_2c_license_plates_with_repetition, 26^3 * 10^4)
+
+$license_plate_count(example_2c_license_plates_with_repetition, 26^3 * 10^4)
+26^3 * 10^4 = 175760000

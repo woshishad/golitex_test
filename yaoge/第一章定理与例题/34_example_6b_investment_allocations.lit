@@ -1,0 +1,20 @@
+# id: chapter1_example_6b
+# source: A First Course in Probability, Chapter 1
+# topic: integer solutions
+# difficulty: medium
+# natural_language_idea: Allocate 20 thousand-dollar units among 4 investments; optional reserve is a fifth category.
+# litex_code: this file
+# proof_attempt: Use stars-and-bars results abstractly and verify the numerical choose values.
+# status: translated
+# blocker: blocked_by_stdlib
+# notes: The allocation-to-solution bijection and choose function are abstract.
+
+abstract_prop investment_allocation_count(item, total_count)
+
+have example_6b_all_invested set
+have example_6b_optional_reserve set
+know $investment_allocation_count(example_6b_all_invested, 1771)
+know $investment_allocation_count(example_6b_optional_reserve, 10626)
+
+23 * 22 * 21 / (3 * 2 * 1) = 1771
+24 * 23 * 22 * 21 / (4 * 3 * 2 * 1) = 10626

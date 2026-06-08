@@ -1,0 +1,18 @@
+# id: chapter1_example_2a
+# source: A First Course in Probability, Chapter 1
+# topic: basic counting
+# difficulty: easy
+# natural_language_idea: Choose one of 10 women and then one of her 3 children.
+# litex_code: this file
+# proof_attempt: Use the basic counting product and verify the arithmetic.
+# status: translated
+# blocker: blocked_by_stdlib
+# notes: The counting model is abstract; the arithmetic result is checkable.
+
+abstract_prop two_stage_count(item, first_count, second_count, total_count)
+
+have example_2a_woman_and_child set
+know $two_stage_count(example_2a_woman_and_child, 10, 3, 10 * 3)
+
+$two_stage_count(example_2a_woman_and_child, 10, 3, 10 * 3)
+10 * 3 = 30

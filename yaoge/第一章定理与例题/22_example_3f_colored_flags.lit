@@ -1,0 +1,18 @@
+# id: chapter1_example_3f
+# source: A First Course in Probability, Chapter 1
+# topic: repeated permutations
+# difficulty: easy
+# natural_language_idea: Flags of the same color are indistinguishable, so divide 9! by 4!3!2!.
+# litex_code: this file
+# proof_attempt: Model color-sequence counting abstractly and verify the arithmetic.
+# status: translated
+# blocker: blocked_by_stdlib
+# notes: The repeated-object count is abstract.
+
+abstract_prop colored_flag_sequence_count(item, total_count)
+
+have example_3f_colored_flags set
+know $colored_flag_sequence_count(example_3f_colored_flags, (9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1) / ((4 * 3 * 2 * 1) * (3 * 2 * 1) * (2 * 1)))
+
+$colored_flag_sequence_count(example_3f_colored_flags, (9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1) / ((4 * 3 * 2 * 1) * (3 * 2 * 1) * (2 * 1)))
+(9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1) / ((4 * 3 * 2 * 1) * (3 * 2 * 1) * (2 * 1)) = 1260

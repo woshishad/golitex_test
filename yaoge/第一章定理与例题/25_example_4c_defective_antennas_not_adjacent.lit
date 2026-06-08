@@ -1,0 +1,22 @@
+# id: chapter1_example_4c
+# source: A First Course in Probability, Chapter 1
+# topic: combinations
+# difficulty: medium
+# natural_language_idea: Place m defective antennas in n slots with at least one functional antenna between defectives.
+# litex_code: this file
+# proof_attempt: State the gap-transformed count using abstract choose.
+# status: translated
+# blocker: blocked_by_stdlib
+# notes: Needs a formal bijection between valid placements and shifted positions.
+
+abstract_prop nonadjacent_defective_antenna_count(item, total_slots, defective_count, total_count)
+
+have choose set
+have example_4c_defective_antennas_not_adjacent set
+know choose $in fn(n, r R) R
+
+know:
+    forall n, m R:
+        $nonadjacent_defective_antenna_count(example_4c_defective_antennas_not_adjacent, n, m, choose(n - m + 1, m))
+
+$nonadjacent_defective_antenna_count(example_4c_defective_antennas_not_adjacent, 10, 3, choose(10 - 3 + 1, 3))

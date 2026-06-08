@@ -1,0 +1,22 @@
+# id: chapter1_theorem_03
+# source: A First Course in Probability, Chapter 1
+# topic: permutations
+# difficulty: easy
+# natural_language_idea: The number of linear orderings of n distinct objects is n factorial.
+# litex_code: this file
+# proof_attempt: Declare factorial as the result interface for permutations; verify concrete expanded factorial arithmetic.
+# status: translated
+# blocker: blocked_by_stdlib
+# notes: Factorial and permutation counting are abstract here.
+
+abstract_prop permutation_count(item, object_count, total_count)
+
+have factorial set
+have theorem_permutation_of_distinct_objects set
+know factorial $in fn(n R) R
+
+know:
+    forall n R:
+        $permutation_count(theorem_permutation_of_distinct_objects, n, factorial(n))
+
+9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1 = 362880

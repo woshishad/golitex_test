@@ -1,0 +1,21 @@
+# id: chapter1_theorem_09
+# source: A First Course in Probability, Chapter 1
+# topic: multinomial theorem
+# difficulty: medium
+# natural_language_idea: In a multinomial expansion, each coefficient counts the ways to choose which factors contribute each variable.
+# litex_code: this file
+# proof_attempt: Represent the full theorem as an abstract expansion predicate; verify a small trinomial square instance.
+# status: translated
+# blocker: blocked_by_stdlib
+# notes: Full formalization needs finite multi-index sums and multinomial coefficients.
+
+abstract_prop multinomial_expansion(item, exponent, variable_count)
+
+have theorem_multinomial_theorem set
+
+know:
+    forall n, r R:
+        $multinomial_expansion(theorem_multinomial_theorem, n, r)
+
+forall x1, x2, x3 R:
+    (x1 + x2 + x3)^2 = x1^2 + x2^2 + x3^2 + 2 * x1 * x2 + 2 * x1 * x3 + 2 * x2 * x3

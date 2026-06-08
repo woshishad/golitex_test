@@ -1,0 +1,24 @@
+# id: chapter1_theorem_04
+# source: A First Course in Probability, Chapter 1
+# topic: permutations
+# difficulty: medium
+# natural_language_idea: If n objects have repeated classes of sizes n1,n2,n3, the number of distinct orderings is n!/(n1!n2!n3!).
+# litex_code: this file
+# proof_attempt: State the repeated-object permutation count through abstract factorial and a repeated permutation predicate.
+# status: translated
+# blocker: blocked_by_stdlib
+# notes: The three-class form is enough for the chapter examples; a general finite product version is future stdlib work.
+
+abstract_prop repeated_permutation_count(item, total_objects, class1, class2, class3, total_count)
+
+have factorial set
+have theorem_repeated_permutation_count set
+know factorial $in fn(n R) R
+
+know:
+    forall n, n1, n2, n3 R:
+        factorial(n1) * factorial(n2) * factorial(n3) != 0
+        =>:
+            $repeated_permutation_count(theorem_repeated_permutation_count, n, n1, n2, n3, factorial(n) / (factorial(n1) * factorial(n2) * factorial(n3)))
+
+6 * 5 * 4 * 3 * 2 * 1 / ((3 * 2 * 1) * (2 * 1) * 1) = 60

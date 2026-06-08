@@ -1,0 +1,18 @@
+# id: chapter1_example_2e
+# source: A First Course in Probability, Chapter 1
+# topic: basic counting
+# difficulty: easy
+# natural_language_idea: Choose three distinct letters and four distinct digits in ordered positions.
+# litex_code: this file
+# proof_attempt: Model the no-repetition plate count abstractly and verify the product.
+# status: translated
+# blocker: blocked_by_stdlib
+# notes: Distinctness and plate-position counting are abstract.
+
+abstract_prop license_plate_count(item, total_count)
+
+have example_2e_license_plates_without_repetition set
+know $license_plate_count(example_2e_license_plates_without_repetition, 26 * 25 * 24 * 10 * 9 * 8 * 7)
+
+$license_plate_count(example_2e_license_plates_without_repetition, 26 * 25 * 24 * 10 * 9 * 8 * 7)
+26 * 25 * 24 * 10 * 9 * 8 * 7 = 78624000

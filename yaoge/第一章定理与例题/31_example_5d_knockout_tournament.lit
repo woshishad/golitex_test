@@ -1,0 +1,20 @@
+# id: chapter1_example_5d
+# source: A First Course in Probability, Chapter 1
+# topic: permutations
+# difficulty: medium
+# natural_language_idea: A complete knockout tournament outcome is determined by the order in which players are eliminated and the champion.
+# litex_code: this file
+# proof_attempt: Model initial-round and complete-tournament counts abstractly; verify the concrete arithmetic.
+# status: translated
+# blocker: blocked_by_stdlib
+# notes: Tournament bracket semantics are abstract.
+
+abstract_prop initial_round_outcome_count(item, player_count, total_count)
+abstract_prop complete_tournament_outcome_count(item, player_count, total_count)
+
+have example_5d_knockout_tournament set
+know $initial_round_outcome_count(example_5d_knockout_tournament, 8, 8 * 7 * 6 * 5)
+know $complete_tournament_outcome_count(example_5d_knockout_tournament, 8, 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1)
+
+8 * 7 * 6 * 5 = 1680
+8 * 7 * 6 * 5 * 4 * 3 * 2 * 1 = 40320

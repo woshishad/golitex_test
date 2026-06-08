@@ -1,0 +1,22 @@
+# id: chapter1_theorem_10
+# source: A First Course in Probability, Chapter 1
+# topic: integer solutions
+# difficulty: medium
+# natural_language_idea: Positive solutions of x1+...+xr=n correspond to placing r-1 dividers among n-1 gaps.
+# litex_code: this file
+# proof_attempt: State the stars-and-bars count for positive integer solutions using abstract choose.
+# status: translated
+# blocker: blocked_by_stdlib
+# notes: A formal proof needs finite tuple counting and a bijection with divider positions.
+
+abstract_prop positive_solution_count(item, variable_count, sum_value, total_count)
+
+have choose set
+have proposition_positive_integer_solutions set
+know choose $in fn(n, r R) R
+
+know:
+    forall r, n R:
+        $positive_solution_count(proposition_positive_integer_solutions, r, n, choose(n - 1, r - 1))
+
+$positive_solution_count(proposition_positive_integer_solutions, 2, 3, choose(2, 1))

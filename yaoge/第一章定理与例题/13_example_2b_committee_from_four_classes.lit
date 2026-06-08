@@ -1,0 +1,18 @@
+# id: chapter1_example_2b
+# source: A First Course in Probability, Chapter 1
+# topic: basic counting
+# difficulty: easy
+# natural_language_idea: Choose one representative from classes of sizes 3,4,5,2.
+# litex_code: this file
+# proof_attempt: Use a four-stage abstract count and verify the product.
+# status: translated
+# blocker: blocked_by_stdlib
+# notes: The class-choice interpretation is abstract; the arithmetic is checkable.
+
+abstract_prop four_stage_count(item, first_count, second_count, third_count, fourth_count, total_count)
+
+have example_2b_committee_from_four_classes set
+know $four_stage_count(example_2b_committee_from_four_classes, 3, 4, 5, 2, 3 * 4 * 5 * 2)
+
+$four_stage_count(example_2b_committee_from_four_classes, 3, 4, 5, 2, 3 * 4 * 5 * 2)
+3 * 4 * 5 * 2 = 120

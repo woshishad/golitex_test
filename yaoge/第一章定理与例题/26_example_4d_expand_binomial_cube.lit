@@ -1,0 +1,13 @@
+# id: chapter1_example_4d
+# source: A First Course in Probability, Chapter 1
+# topic: binomial theorem
+# difficulty: easy
+# natural_language_idea: Apply the binomial theorem with n=3.
+# litex_code: this file
+# proof_attempt: Directly verify the polynomial identity.
+# status: checkable
+# blocker:
+# notes: This file has no combinatorial proof debt; it is a polynomial identity.
+
+forall x, y R:
+    (x + y)^3 = x^3 + 3 * x^2 * y + 3 * x * y^2 + y^3

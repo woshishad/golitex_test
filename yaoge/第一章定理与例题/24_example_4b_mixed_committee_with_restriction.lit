@@ -1,0 +1,20 @@
+# id: chapter1_example_4b
+# source: A First Course in Probability, Chapter 1
+# topic: combinations
+# difficulty: medium
+# natural_language_idea: Choose 2 women from 5 and 3 men from 7; subtract committees containing both feuding men.
+# litex_code: this file
+# proof_attempt: Model unrestricted and restricted committee counts, then verify the arithmetic.
+# status: translated
+# blocker: blocked_by_stdlib
+# notes: The combinatorial selection interpretation is abstract.
+
+abstract_prop mixed_committee_count(item, total_count)
+
+have example_4b_unrestricted set
+have example_4b_restricted set
+know $mixed_committee_count(example_4b_unrestricted, 350)
+know $mixed_committee_count(example_4b_restricted, 300)
+
+(5 * 4 / (2 * 1)) * (7 * 6 * 5 / (3 * 2 * 1)) = 350
+350 - (5 * 4 / (2 * 1)) * 5 = 300

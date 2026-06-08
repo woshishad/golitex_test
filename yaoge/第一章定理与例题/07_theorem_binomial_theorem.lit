@@ -1,0 +1,21 @@
+# id: chapter1_theorem_07
+# source: A First Course in Probability, Chapter 1
+# topic: binomial theorem
+# difficulty: medium
+# natural_language_idea: In (x+y)^n, the coefficient of x^k y^(n-k) is the number of ways to choose k x-factors.
+# litex_code: this file
+# proof_attempt: Represent the expansion theorem as an abstract predicate and verify the n=3 arithmetic shape separately.
+# status: translated
+# blocker: blocked_by_stdlib
+# notes: A finite-sum and polynomial-expansion interface would make the full theorem checkable.
+
+abstract_prop binomial_expansion(item, exponent, x, y)
+
+have theorem_binomial_theorem set
+
+know:
+    forall n, x, y R:
+        $binomial_expansion(theorem_binomial_theorem, n, x, y)
+
+forall x, y R:
+    (x + y)^3 = x^3 + 3 * x^2 * y + 3 * x * y^2 + y^3
