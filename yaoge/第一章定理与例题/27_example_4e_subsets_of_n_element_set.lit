@@ -7,20 +7,21 @@
 # 中文思路: 用抽象子集计数谓词表示 2^n 和 2^n-1，并验证 n=5 的数值。
 # litex_code: this file
 # proof_attempt: State subset and nonempty-subset counts abstractly; verify a concrete arithmetic instance.
-# status: translated
+# status: blocked
 # blocker: blocked_by_stdlib
 # notes: Finite powerset cardinality is needed for a full proof.
+# verification_boundary: proof_debt 和 intended_result 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
 
 abstract_prop subset_count(item, element_count, total_count)
 abstract_prop nonempty_subset_count(item, element_count, total_count)
 
 have example_4e_subsets_of_n_element_set set
 
-know:
-    forall n R:
-        $subset_count(example_4e_subsets_of_n_element_set, n, 2^n)
-        $nonempty_subset_count(example_4e_subsets_of_n_element_set, n, 2^n - 1)
+# proof_debt: know:
+# proof_debt:     forall n R:
+# proof_debt:         $subset_count(example_4e_subsets_of_n_element_set, n, 2^n)
+# proof_debt:         $nonempty_subset_count(example_4e_subsets_of_n_element_set, n, 2^n - 1)
 
-$subset_count(example_4e_subsets_of_n_element_set, 5, 2^5)
+# intended_result: $subset_count(example_4e_subsets_of_n_element_set, 5, 2^5)
 2^5 = 32
 2^5 - 1 = 31

@@ -7,20 +7,21 @@
 # 中文思路: 把重复对象排列公式作为抽象计数命题，具体除法计算单独验证。
 # litex_code: this file
 # proof_attempt: State the repeated-object permutation count through abstract factorial and a repeated permutation predicate.
-# status: translated
+# status: blocked
 # blocker: blocked_by_stdlib
 # notes: The three-class form is enough for the chapter examples; a general finite product version is future stdlib work.
+# verification_boundary: proof_debt 和 intended_result 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
 
 abstract_prop repeated_permutation_count(item, total_objects, class1, class2, class3, total_count)
 
 have factorial set
 have theorem_repeated_permutation_count set
-know factorial $in fn(n R) R
+# proof_debt: know factorial $in fn(n R) R
 
-know:
-    forall n, n1, n2, n3 R:
-        factorial(n1) * factorial(n2) * factorial(n3) != 0
-        =>:
-            $repeated_permutation_count(theorem_repeated_permutation_count, n, n1, n2, n3, factorial(n) / (factorial(n1) * factorial(n2) * factorial(n3)))
+# proof_debt: know:
+# proof_debt:     forall n, n1, n2, n3 R:
+# proof_debt:         factorial(n1) * factorial(n2) * factorial(n3) != 0
+# proof_debt:         =>:
+# proof_debt:             $repeated_permutation_count(theorem_repeated_permutation_count, n, n1, n2, n3, factorial(n) / (factorial(n1) * factorial(n2) * factorial(n3)))
 
 6 * 5 * 4 * 3 * 2 * 1 / ((3 * 2 * 1) * (2 * 1) * 1) = 60

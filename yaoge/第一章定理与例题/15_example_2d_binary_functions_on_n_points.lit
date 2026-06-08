@@ -7,17 +7,18 @@
 # 中文思路: 用抽象函数计数谓词表达一般结论，并验证 n=5 时 2^5=32。
 # litex_code: this file
 # proof_attempt: State the generic function count through an abstract predicate.
-# status: translated
+# status: blocked
 # blocker: blocked_by_stdlib
 # notes: A formal proof needs finite function-space cardinality.
+# verification_boundary: proof_debt 和 intended_result 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
 
 abstract_prop binary_function_count(item, point_count, total_count)
 
 have example_2d_binary_functions_on_n_points set
 
-know:
-    forall n R:
-        $binary_function_count(example_2d_binary_functions_on_n_points, n, 2^n)
+# proof_debt: know:
+# proof_debt:     forall n R:
+# proof_debt:         $binary_function_count(example_2d_binary_functions_on_n_points, n, 2^n)
 
-$binary_function_count(example_2d_binary_functions_on_n_points, 5, 2^5)
+# intended_result: $binary_function_count(example_2d_binary_functions_on_n_points, 5, 2^5)
 2^5 = 32

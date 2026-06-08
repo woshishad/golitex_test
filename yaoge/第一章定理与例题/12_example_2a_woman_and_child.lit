@@ -7,14 +7,15 @@
 # 中文思路: 两步选择相乘，验证 10*3=30。
 # litex_code: this file
 # proof_attempt: Use the basic counting product and verify the arithmetic.
-# status: translated
+# status: blocked
 # blocker: blocked_by_stdlib
 # notes: The counting model is abstract; the arithmetic result is checkable.
+# verification_boundary: proof_debt 和 intended_result 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
 
 abstract_prop two_stage_count(item, first_count, second_count, total_count)
 
 have example_2a_woman_and_child set
-know $two_stage_count(example_2a_woman_and_child, 10, 3, 10 * 3)
+# proof_debt: know $two_stage_count(example_2a_woman_and_child, 10, 3, 10 * 3)
 
-$two_stage_count(example_2a_woman_and_child, 10, 3, 10 * 3)
+# intended_result: $two_stage_count(example_2a_woman_and_child, 10, 3, 10 * 3)
 10 * 3 = 30

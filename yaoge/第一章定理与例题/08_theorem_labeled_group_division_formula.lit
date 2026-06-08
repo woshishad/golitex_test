@@ -7,20 +7,21 @@
 # 中文思路: 用抽象谓词表达有标号分组计数，具体阶乘商的数值计算单独验证。
 # litex_code: this file
 # proof_attempt: State the labeled-group formula through abstract factorial and group-count predicate.
-# status: translated
+# status: blocked
 # blocker: blocked_by_stdlib
 # notes: This is the finite labeled version used before the multinomial theorem.
+# verification_boundary: proof_debt 和 intended_result 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
 
 abstract_prop labeled_group_division_count(item, total_objects, group1, group2, group3, total_count)
 
 have factorial set
 have theorem_labeled_group_division set
-know factorial $in fn(n R) R
+# proof_debt: know factorial $in fn(n R) R
 
-know:
-    forall n, n1, n2, n3 R:
-        factorial(n1) * factorial(n2) * factorial(n3) != 0
-        =>:
-            $labeled_group_division_count(theorem_labeled_group_division, n, n1, n2, n3, factorial(n) / (factorial(n1) * factorial(n2) * factorial(n3)))
+# proof_debt: know:
+# proof_debt:     forall n, n1, n2, n3 R:
+# proof_debt:         factorial(n1) * factorial(n2) * factorial(n3) != 0
+# proof_debt:         =>:
+# proof_debt:             $labeled_group_division_count(theorem_labeled_group_division, n, n1, n2, n3, factorial(n) / (factorial(n1) * factorial(n2) * factorial(n3)))
 
 10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1 / ((5 * 4 * 3 * 2 * 1) * (2 * 1) * (3 * 2 * 1)) = 2520

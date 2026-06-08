@@ -7,14 +7,15 @@
 # 中文思路: 将块排列和块内排列相乘，并验证乘积为 6912。
 # litex_code: this file
 # proof_attempt: Use an abstract block-arrangement count and verify the product.
-# status: translated
+# status: blocked
 # blocker: blocked_by_stdlib
 # notes: Block grouping is abstract; product arithmetic is checkable.
+# verification_boundary: proof_debt 和 intended_result 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
 
 abstract_prop block_arrangement_count(item, total_count)
 
 have example_3c_books_by_subject set
-know $block_arrangement_count(example_3c_books_by_subject, (4 * 3 * 2 * 1) * (4 * 3 * 2 * 1) * (3 * 2 * 1) * (2 * 1) * 1)
+# proof_debt: know $block_arrangement_count(example_3c_books_by_subject, (4 * 3 * 2 * 1) * (4 * 3 * 2 * 1) * (3 * 2 * 1) * (2 * 1) * 1)
 
-$block_arrangement_count(example_3c_books_by_subject, (4 * 3 * 2 * 1) * (4 * 3 * 2 * 1) * (3 * 2 * 1) * (2 * 1) * 1)
+# intended_result: $block_arrangement_count(example_3c_books_by_subject, (4 * 3 * 2 * 1) * (4 * 3 * 2 * 1) * (3 * 2 * 1) * (2 * 1) * 1)
 (4 * 3 * 2 * 1) * (4 * 3 * 2 * 1) * (3 * 2 * 1) * (2 * 1) * 1 = 6912

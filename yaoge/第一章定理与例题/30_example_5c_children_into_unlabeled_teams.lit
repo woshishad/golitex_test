@@ -7,14 +7,15 @@
 # 中文思路: 在有标号分队基础上再除以 2!，验证结果为 126。
 # litex_code: this file
 # proof_attempt: Model unlabeled teams abstractly and verify the arithmetic.
-# status: translated
+# status: blocked
 # blocker: blocked_by_stdlib
 # notes: The unlabeled quotient by team swap is abstract.
+# verification_boundary: proof_debt 和 intended_result 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
 
 abstract_prop unlabeled_team_count(item, total_count)
 
 have example_5c_children_into_unlabeled_teams set
-know $unlabeled_team_count(example_5c_children_into_unlabeled_teams, (10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1) / ((5 * 4 * 3 * 2 * 1) * (5 * 4 * 3 * 2 * 1) * (2 * 1)))
+# proof_debt: know $unlabeled_team_count(example_5c_children_into_unlabeled_teams, (10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1) / ((5 * 4 * 3 * 2 * 1) * (5 * 4 * 3 * 2 * 1) * (2 * 1)))
 
-$unlabeled_team_count(example_5c_children_into_unlabeled_teams, (10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1) / ((5 * 4 * 3 * 2 * 1) * (5 * 4 * 3 * 2 * 1) * (2 * 1)))
+# intended_result: $unlabeled_team_count(example_5c_children_into_unlabeled_teams, (10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1) / ((5 * 4 * 3 * 2 * 1) * (5 * 4 * 3 * 2 * 1) * (2 * 1)))
 (10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1) / ((5 * 4 * 3 * 2 * 1) * (5 * 4 * 3 * 2 * 1) * (2 * 1)) = 126

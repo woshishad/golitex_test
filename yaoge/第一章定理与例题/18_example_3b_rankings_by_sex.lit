@@ -7,16 +7,17 @@
 # 中文思路: 分别验证 10! 与 6!*4! 的展开计算。
 # litex_code: this file
 # proof_attempt: Model both ranking counts and verify their arithmetic values.
-# status: translated
+# status: blocked
 # blocker: blocked_by_stdlib
 # notes: Ranking interpretation is abstract.
+# verification_boundary: proof_debt 和 intended_result 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
 
 abstract_prop ranking_count(item, total_count)
 
 have example_3b_all_rankings set
 have example_3b_separate_rankings set
-know $ranking_count(example_3b_all_rankings, 10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1)
-know $ranking_count(example_3b_separate_rankings, (6 * 5 * 4 * 3 * 2 * 1) * (4 * 3 * 2 * 1))
+# proof_debt: know $ranking_count(example_3b_all_rankings, 10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1)
+# proof_debt: know $ranking_count(example_3b_separate_rankings, (6 * 5 * 4 * 3 * 2 * 1) * (4 * 3 * 2 * 1))
 
 10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1 = 3628800
 (6 * 5 * 4 * 3 * 2 * 1) * (4 * 3 * 2 * 1) = 17280

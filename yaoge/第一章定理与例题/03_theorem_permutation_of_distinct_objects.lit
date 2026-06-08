@@ -7,18 +7,19 @@
 # 中文思路: 用 factorial 表示阶乘接口，并验证 9! 的展开计算。
 # litex_code: this file
 # proof_attempt: Declare factorial as the result interface for permutations; verify concrete expanded factorial arithmetic.
-# status: translated
+# status: blocked
 # blocker: blocked_by_stdlib
 # notes: Factorial and permutation counting are abstract here.
+# verification_boundary: proof_debt 和 intended_result 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
 
 abstract_prop permutation_count(item, object_count, total_count)
 
 have factorial set
 have theorem_permutation_of_distinct_objects set
-know factorial $in fn(n R) R
+# proof_debt: know factorial $in fn(n R) R
 
-know:
-    forall n R:
-        $permutation_count(theorem_permutation_of_distinct_objects, n, factorial(n))
+# proof_debt: know:
+# proof_debt:     forall n R:
+# proof_debt:         $permutation_count(theorem_permutation_of_distinct_objects, n, factorial(n))
 
 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1 = 362880

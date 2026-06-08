@@ -7,15 +7,16 @@
 # 中文思路: 将 C(n,r)=C(n-1,r-1)+C(n-1,r) 作为 choose 的抽象恒等式记录。
 # litex_code: this file
 # proof_attempt: State Pascal's identity for an abstract choose function.
-# status: translated
+# status: blocked
 # blocker: blocked_by_stdlib
 # notes: The combinatorial partition proof is not formalized because choose is abstract.
+# verification_boundary: proof_debt 和 intended_result 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
 
 have choose set
-know choose $in fn(n, r R) R
+# proof_debt: know choose $in fn(n, r R) R
 
-know:
-    forall n, r R:
-        choose(n, r) = choose(n - 1, r - 1) + choose(n - 1, r)
+# proof_debt: know:
+# proof_debt:     forall n, r R:
+# proof_debt:         choose(n, r) = choose(n - 1, r - 1) + choose(n - 1, r)
 
-choose(5, 2) = choose(4, 1) + choose(4, 2)
+# intended_result: choose(5, 2) = choose(4, 1) + choose(4, 2)

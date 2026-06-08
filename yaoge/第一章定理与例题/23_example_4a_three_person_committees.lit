@@ -7,17 +7,18 @@
 # 中文思路: 用 choose 表示组合数，并验证 C(20,3)=1140 的阶乘计算。
 # litex_code: this file
 # proof_attempt: Model committee choice through choose and verify the factorial calculation.
-# status: translated
+# status: blocked
 # blocker: blocked_by_stdlib
 # notes: The choose value is asserted because choose is abstract.
+# verification_boundary: proof_debt 和 intended_result 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
 
 abstract_prop committee_count(item, total_count)
 
 have choose set
 have example_4a_three_person_committees set
-know choose $in fn(n, r R) R
-know choose(20, 3) = 1140
-know $committee_count(example_4a_three_person_committees, choose(20, 3))
+# proof_debt: know choose $in fn(n, r R) R
+# proof_debt: know choose(20, 3) = 1140
+# proof_debt: know $committee_count(example_4a_three_person_committees, choose(20, 3))
 
-choose(20, 3) = 1140
+# intended_result: choose(20, 3) = 1140
 20 * 19 * 18 / (3 * 2 * 1) = 1140

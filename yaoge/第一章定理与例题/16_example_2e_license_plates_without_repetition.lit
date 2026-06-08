@@ -7,14 +7,15 @@
 # 中文思路: 按位置依次选择，验证 26*25*24*10*9*8*7。
 # litex_code: this file
 # proof_attempt: Model the no-repetition plate count abstractly and verify the product.
-# status: translated
+# status: blocked
 # blocker: blocked_by_stdlib
 # notes: Distinctness and plate-position counting are abstract.
+# verification_boundary: proof_debt 和 intended_result 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
 
 abstract_prop license_plate_count(item, total_count)
 
 have example_2e_license_plates_without_repetition set
-know $license_plate_count(example_2e_license_plates_without_repetition, 26 * 25 * 24 * 10 * 9 * 8 * 7)
+# proof_debt: know $license_plate_count(example_2e_license_plates_without_repetition, 26 * 25 * 24 * 10 * 9 * 8 * 7)
 
-$license_plate_count(example_2e_license_plates_without_repetition, 26 * 25 * 24 * 10 * 9 * 8 * 7)
+# intended_result: $license_plate_count(example_2e_license_plates_without_repetition, 26 * 25 * 24 * 10 * 9 * 8 * 7)
 26 * 25 * 24 * 10 * 9 * 8 * 7 = 78624000

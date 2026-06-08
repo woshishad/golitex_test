@@ -7,23 +7,24 @@
 # 中文思路: 声明 choose 与 factorial 接口，记录组合数和阶乘公式之间的关系。
 # litex_code: this file
 # proof_attempt: Declare choose and factorial as abstract interfaces, then state their textbook relationship.
-# status: translated
+# status: blocked
 # blocker: blocked_by_stdlib
 # notes: Proving this requires definitions of finite subsets, factorial, and choose.
+# verification_boundary: proof_debt 和 intended_result 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
 
 abstract_prop subset_choice_count(item, object_count, chosen_count, total_count)
 
 have choose set
 have factorial set
 have theorem_combination_formula set
-know choose $in fn(n, r R) R
-know factorial $in fn(n R) R
+# proof_debt: know choose $in fn(n, r R) R
+# proof_debt: know factorial $in fn(n R) R
 
-know:
-    forall n, r R:
-        factorial(n - r) * factorial(r) != 0
-        =>:
-            $subset_choice_count(theorem_combination_formula, n, r, choose(n, r))
-            choose(n, r) = factorial(n) / (factorial(n - r) * factorial(r))
+# proof_debt: know:
+# proof_debt:     forall n, r R:
+# proof_debt:         factorial(n - r) * factorial(r) != 0
+# proof_debt:         =>:
+# proof_debt:             $subset_choice_count(theorem_combination_formula, n, r, choose(n, r))
+# proof_debt:             choose(n, r) = factorial(n) / (factorial(n - r) * factorial(r))
 
 20 * 19 * 18 / (3 * 2 * 1) = 1140

@@ -7,17 +7,18 @@
 # 中文思路: 完整二项式定理先用抽象展开谓词表示，同时验证 n=3 的多项式展开。
 # litex_code: this file
 # proof_attempt: Represent the expansion theorem as an abstract predicate and verify the n=3 arithmetic shape separately.
-# status: translated
+# status: blocked
 # blocker: blocked_by_stdlib
 # notes: A finite-sum and polynomial-expansion interface would make the full theorem checkable.
+# verification_boundary: proof_debt 和 intended_result 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
 
 abstract_prop binomial_expansion(item, exponent, x, y)
 
 have theorem_binomial_theorem set
 
-know:
-    forall n, x, y R:
-        $binomial_expansion(theorem_binomial_theorem, n, x, y)
+# proof_debt: know:
+# proof_debt:     forall n, x, y R:
+# proof_debt:         $binomial_expansion(theorem_binomial_theorem, n, x, y)
 
 forall x, y R:
     (x + y)^3 = x^3 + 3 * x^2 * y + 3 * x * y^2 + y^3

@@ -7,18 +7,19 @@
 # 中文思路: 将项数转化为非负整数解数量，记录公式 C(n+r-1,r-1)。
 # litex_code: this file
 # proof_attempt: State the term count through abstract choose.
-# status: translated
+# status: blocked
 # blocker: blocked_by_stdlib
 # notes: Needs finite multi-index and nonnegative-solution counting support.
+# verification_boundary: proof_debt 和 intended_result 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
 
 abstract_prop multinomial_term_count(item, variable_count, exponent, total_count)
 
 have choose set
 have example_6c_number_of_multinomial_terms set
-know choose $in fn(n, r R) R
+# proof_debt: know choose $in fn(n, r R) R
 
-know:
-    forall r, n R:
-        $multinomial_term_count(example_6c_number_of_multinomial_terms, r, n, choose(n + r - 1, r - 1))
+# proof_debt: know:
+# proof_debt:     forall r, n R:
+# proof_debt:         $multinomial_term_count(example_6c_number_of_multinomial_terms, r, n, choose(n + r - 1, r - 1))
 
-$multinomial_term_count(example_6c_number_of_multinomial_terms, 3, 2, choose((2 + 3) - 1, 3 - 1))
+# intended_result: $multinomial_term_count(example_6c_number_of_multinomial_terms, 3, 2, choose((2 + 3) - 1, 3 - 1))

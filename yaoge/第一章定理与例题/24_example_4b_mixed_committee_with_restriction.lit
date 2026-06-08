@@ -7,16 +7,17 @@
 # 中文思路: 先算无限制方案数 350，再减去冲突方案数得到 300。
 # litex_code: this file
 # proof_attempt: Model unrestricted and restricted committee counts, then verify the arithmetic.
-# status: translated
+# status: blocked
 # blocker: blocked_by_stdlib
 # notes: The combinatorial selection interpretation is abstract.
+# verification_boundary: proof_debt 和 intended_result 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
 
 abstract_prop mixed_committee_count(item, total_count)
 
 have example_4b_unrestricted set
 have example_4b_restricted set
-know $mixed_committee_count(example_4b_unrestricted, 350)
-know $mixed_committee_count(example_4b_restricted, 300)
+# proof_debt: know $mixed_committee_count(example_4b_unrestricted, 350)
+# proof_debt: know $mixed_committee_count(example_4b_restricted, 300)
 
 (5 * 4 / (2 * 1)) * (7 * 6 * 5 / (3 * 2 * 1)) = 350
 350 - (5 * 4 / (2 * 1)) * 5 = 300

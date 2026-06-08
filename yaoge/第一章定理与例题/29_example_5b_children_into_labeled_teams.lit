@@ -7,14 +7,15 @@
 # 中文思路: 用有标号分组公式，验证 10!/(5!5!)=252。
 # litex_code: this file
 # proof_attempt: Model labeled teams abstractly and verify the arithmetic.
-# status: translated
+# status: blocked
 # blocker: blocked_by_stdlib
 # notes: The team-label counting interpretation is abstract.
+# verification_boundary: proof_debt 和 intended_result 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
 
 abstract_prop labeled_team_count(item, total_count)
 
 have example_5b_children_into_labeled_teams set
-know $labeled_team_count(example_5b_children_into_labeled_teams, (10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1) / ((5 * 4 * 3 * 2 * 1) * (5 * 4 * 3 * 2 * 1)))
+# proof_debt: know $labeled_team_count(example_5b_children_into_labeled_teams, (10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1) / ((5 * 4 * 3 * 2 * 1) * (5 * 4 * 3 * 2 * 1)))
 
-$labeled_team_count(example_5b_children_into_labeled_teams, (10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1) / ((5 * 4 * 3 * 2 * 1) * (5 * 4 * 3 * 2 * 1)))
+# intended_result: $labeled_team_count(example_5b_children_into_labeled_teams, (10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1) / ((5 * 4 * 3 * 2 * 1) * (5 * 4 * 3 * 2 * 1)))
 (10 * 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1) / ((5 * 4 * 3 * 2 * 1) * (5 * 4 * 3 * 2 * 1)) = 252

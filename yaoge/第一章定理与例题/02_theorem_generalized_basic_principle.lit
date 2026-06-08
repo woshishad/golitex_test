@@ -7,17 +7,18 @@
 # 中文思路: 用四步选择代表多步乘法原则；真正的任意长度乘积还需要标准库支持。
 # litex_code: this file
 # proof_attempt: Formalize a four-stage representative form; the fully variable-length product needs a counting library.
-# status: translated
+# status: blocked
 # blocker: blocked_by_stdlib
 # notes: This captures the textbook principle for the concrete finite-stage shape used in many examples.
+# verification_boundary: proof_debt 和 intended_result 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
 
 abstract_prop four_stage_count(item, first_count, second_count, third_count, fourth_count, total_count)
 
 have theorem_generalized_basic_principle set
 
-know:
-    forall a, b, c, d R:
-        $four_stage_count(theorem_generalized_basic_principle, a, b, c, d, a * b * c * d)
+# proof_debt: know:
+# proof_debt:     forall a, b, c, d R:
+# proof_debt:         $four_stage_count(theorem_generalized_basic_principle, a, b, c, d, a * b * c * d)
 
-$four_stage_count(theorem_generalized_basic_principle, 3, 4, 5, 2, 3 * 4 * 5 * 2)
+# intended_result: $four_stage_count(theorem_generalized_basic_principle, 3, 4, 5, 2, 3 * 4 * 5 * 2)
 3 * 4 * 5 * 2 = 120

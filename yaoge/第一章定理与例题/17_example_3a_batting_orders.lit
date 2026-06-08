@@ -7,14 +7,15 @@
 # 中文思路: 用排列计数谓词记录模型，并验证 9! 的展开值。
 # litex_code: this file
 # proof_attempt: Use an abstract permutation count and verify the expanded factorial.
-# status: translated
+# status: blocked
 # blocker: blocked_by_stdlib
 # notes: The permutation-counting theorem is abstract.
+# verification_boundary: proof_debt 和 intended_result 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
 
 abstract_prop batting_order_count(item, player_count, total_count)
 
 have example_3a_batting_orders set
-know $batting_order_count(example_3a_batting_orders, 9, 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1)
+# proof_debt: know $batting_order_count(example_3a_batting_orders, 9, 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1)
 
-$batting_order_count(example_3a_batting_orders, 9, 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1)
+# intended_result: $batting_order_count(example_3a_batting_orders, 9, 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1)
 9 * 8 * 7 * 6 * 5 * 4 * 3 * 2 * 1 = 362880

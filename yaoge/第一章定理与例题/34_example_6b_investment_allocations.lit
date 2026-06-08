@@ -7,16 +7,17 @@
 # 中文思路: 用 stars-and-bars 计数，验证全投为 1771，可留现金为 10626。
 # litex_code: this file
 # proof_attempt: Use stars-and-bars results abstractly and verify the numerical choose values.
-# status: translated
+# status: blocked
 # blocker: blocked_by_stdlib
 # notes: The allocation-to-solution bijection and choose function are abstract.
+# verification_boundary: proof_debt 和 intended_result 是未完成目标；只有未注释的 Litex 语句才是本文件实际验证的内容。
 
 abstract_prop investment_allocation_count(item, total_count)
 
 have example_6b_all_invested set
 have example_6b_optional_reserve set
-know $investment_allocation_count(example_6b_all_invested, 1771)
-know $investment_allocation_count(example_6b_optional_reserve, 10626)
+# proof_debt: know $investment_allocation_count(example_6b_all_invested, 1771)
+# proof_debt: know $investment_allocation_count(example_6b_optional_reserve, 10626)
 
 23 * 22 * 21 / (3 * 2 * 1) = 1771
 24 * 23 * 22 * 21 / (4 * 3 * 2 * 1) = 10626
