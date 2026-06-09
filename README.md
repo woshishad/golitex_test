@@ -1,285 +1,265 @@
-<div align="center">
-<img src="https://publisher.litexlang.org/logo.PNG" alt="The Litex Logo" width="300">
-</div>
+# Litex Contribution Work Report
 
-<div align="center">
+This repository records my contribution work around Litex. The main goal is to
+use real textbook translation as a pressure test for Litex: translate natural
+mathematical statements into Litex attempts, run the verifier, and turn failures
+into concrete language, standard-library, inference-rule, and diagnostic
+blockers.
 
-# Litex: The Formal Way to Write Math as It Looks
+The current vertical slice is Chapter 1 of *A First Course in Probability*.
+This chapter is useful because it contains basic counting principles,
+permutations, combinations, binomial and multinomial formulas, quotient-counting
+ideas, and stars-and-bars arguments.
 
-*by Jiachen Shen and The Litex Team, version 0.9.96-beta*
+## Contribution Summary
 
-[![Website](https://img.shields.io/badge/Official%20Website-blue?logo=website)](https://litexlang.com)
-[![Github](https://img.shields.io/badge/Github-grey?logo=github)](https://github.com/litexlang/golitex)
-[![litexpy](https://img.shields.io/badge/Litexpy-green?logo=python)](https://github.com/litexlang/litexpy)
-[![Email](https://img.shields.io/badge/Email-red?logo=email)](mailto:litexlang@outlook.com)
-[![Zulip](https://img.shields.io/badge/Zulip-blue?logo=zulip)](https://litex.zulipchat.com/join/c4e7foogy6paz2sghjnbujov/)
-[![Hugging Face](https://img.shields.io/badge/Hugging%20Face-black?logo=huggingface)](https://huggingface.co/litexlang)
-[![Manual](https://img.shields.io/badge/Manual-orange?logo=book)](https://litexlang.com/doc/Manual)
+My work builds an end-to-end feedback loop:
 
-**Beta notice:** Litex is experimental and not ready for production or mission-critical proof work. **We welcome you to try it.**
-
-</div>
-
-## About This Work Report
-
-This repository is also used as my personal Litex contribution work report.
-My current contribution focuses on using real textbook translation as a
-pressure test for Litex, especially Chapter 1 of *A First Course in
-Probability*.
-
-The work in `yaoge/` records a complete feedback loop:
-
-1. Extract theorem, proposition, exercise, and self-test items from the
-   probability textbook.
+1. Extract theorem, proposition, exercise, and self-test items from the textbook.
 2. Preserve each item's mathematical proof route before writing Litex code.
-3. Generate `.lit` proof attempts for Chapter 1 items.
-4. Run Litex on each generated file and record exact verifier output.
-5. Classify failures into formulation, inference-rule, standard-library,
-   syntax, or diagnostic blockers.
+3. Generate `.lit` proof attempts from the structured records.
+4. Distinguish abstract theorems from concrete problems when generating code.
+5. Run Litex on every generated file and record exact verifier output.
+6. Classify failures into formulation, inference-rule, standard-library,
+   syntax, kernel, or diagnostic blockers.
 
-Current Chapter 1 artifacts include:
+This is not intended as a line-by-line port of a textbook. It is a structured
+pressure test for what Litex can already express and verify, and what support is
+still missing.
 
+## Main Artifacts
+
+- `docs/skills/contribute-to-litex/SKILL.md`: contribution workflow skill for
+  Litex documentation feedback, dataset/textbook translation work, blocker
+  reporting, and contribution PR preparation.
+- `docs/skills/theorem-to-litex/SKILL.md`: theorem/problem-to-Litex translation
+  skill. I updated it to enforce proof-route preservation, boundary probing,
+  no circular proof debt, and correct handling of abstract versus concrete
+  source items.
 - `yaoge/extract_probability_theorems.py`: extracts theorem/problem records and
-  proof routes from the textbook PDF.
-- `yaoge/materialize_chapter1_litex_attempts.py`: turns structured records into
-  executable Litex attempts while distinguishing abstract theorems from
-  concrete problems.
-- `yaoge/run_chapter1_litex_attempts.py`: runs all generated `.lit` files and
-  writes summary and JSON logs.
-- `yaoge/第一章定理与例题/`: generated Chapter 1 Litex attempts, run logs, and
+  proof routes from the probability textbook PDF.
+- `yaoge/generate_chapter1_litex_files.py`: creates initial scaffold `.lit`
+  files from extracted Chapter 1 proof-route records.
+- `yaoge/materialize_chapter1_litex_attempts.py`: turns scaffold records into
+  executable `.lit` attempts while applying the abstract/concrete translation
+  rule.
+- `yaoge/run_chapter1_litex_attempts.py`: runs all generated Chapter 1 `.lit`
+  files and writes structured logs.
+- `yaoge/第一章定理与例题/`: generated Chapter 1 `.lit` files, run logs, and
   blocker notes.
 
-This contribution is intentionally evidence-oriented: successful files become
-examples, while failed files are kept as minimal boundary tests for missing
-Litex language support, inference rules, standard-library theorems, and clearer
-diagnostics.
+## Skill Improvements
 
-## What is Litex?
+I created and revised project-local skills to make the contribution workflow
+repeatable.
 
-_Truth is ever to be found in simplicity, and not in the multiplicity and confusion of things._
+### `contribute-to-litex`
 
-_– Isaac Newton_
+This skill defines how to contribute through:
 
-Litex is an open-source language for writing checked mathematical proof code.
-The basic loop is small:
+- documentation feedback;
+- dataset and textbook translation;
+- understanding/demo improvements;
+- blocker records;
+- contribution PR preparation.
 
-1. Write the next mathematical fact.
-2. Let Litex check it against the facts already in context.
-3. Reuse the verified fact on later lines.
+It also sets the rule that new contributors should usually focus first on
+textbook/data/documentation work rather than verifier, parser, builtin-rule, or
+soundness-critical kernel changes.
 
-Here is a first proof:
+### `theorem-to-litex`
+
+This skill defines the theorem translation discipline used in this work:
+
+- understand the ordinary mathematics before writing Litex;
+- preserve the source proof route;
+- write object-level Litex attempts instead of replacing the theorem with easier
+  arithmetic;
+- run the verifier and record exact failures;
+- classify each item as `translated`, `checkable`, or `blocked`;
+- never mark an item `checkable` without actually running the relevant `.lit`
+  file.
+
+A key correction I added is the abstract/concrete distinction:
+
+- For an abstract theorem, do not prove only a hand-picked concrete instance.
+  For example, a theorem about arbitrary finite sets `A` and `B` should be
+  translated using a general `forall A, B ...` formulation.
+- For a concrete textbook problem, it is valid to use the concrete objects and
+  numbers from that problem, as long as the proof follows the problem's
+  mathematical chain.
+- Concrete witnesses are appropriate for existence proofs.
+- Concrete objects are appropriate for counterexamples.
+
+This rule was added after finding that a generated proof for the basic counting
+principle incorrectly used a single concrete example instead of the general
+statement.
+
+## Chapter 1 Translation Work
+
+The Chapter 1 pipeline generated `86` `.lit` files covering:
+
+- textbook theorem/proposition records;
+- ordinary problems;
+- theoretical exercises;
+- self-test problems.
+
+Each generated file records:
+
+```yaml
+id:
+source:
+kind:
+source_item_shape: abstract/concrete
+source_section:
+pages:
+topic:
+difficulty:
+natural_language_idea:
+proof_attempt:
+status:
+blocker:
+notes:
+book_proof_chain:
+litex_objects_or_predicates:
+executable_litex_attempt:
+```
+
+The generated files are intentionally evidence-oriented. If a proof cannot be
+completed, the file keeps the attempted Litex formulation and the run log records
+why it failed.
+
+## Running Attempts
+
+The batch runner is:
+
+```bash
+/Users/yaoge/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 yaoge/run_chapter1_litex_attempts.py
+```
+
+It writes:
+
+- `yaoge/第一章定理与例题/run_results.md`: human-readable run summary;
+- `yaoge/第一章定理与例题/run_results.json`: full raw verifier output.
+
+Current run summary:
+
+- total files: `86`
+- success: `4`
+- error: `82`
+- timeout: `0`
+- unparsed: `0`
+
+Successful files in the latest run:
+
+- `001_ch1_theorem_01_basic_counting.lit`
+- `002_ch1_theorem_02_generalized_counting.lit`
+- `013_ch1_problems_02.lit`
+- `016_ch1_problems_05.lit`
+
+These successes show that Litex can already verify finite Cartesian-product
+counting patterns, including both an abstract basic counting theorem and
+concrete multi-stage counting problems.
+
+## Failure Analysis
+
+The current failures are useful because they identify where Litex needs more
+support.
+
+Major failure clusters from the run log:
+
+1. `blocked_by_formulation`
+   - Many generated files still fall back to a generic statement such as
+     `count(outcomes) = answer`.
+   - This means the generator has not yet classified the problem into a precise
+     mathematical object.
+   - Next step: improve problem-type recognition and generate sharper Litex
+     formulations.
+
+2. `blocked_by_infer_rule`
+   - Fixed-cardinality subset expressions such as
+     `{s power_set(S): count(s) = r}` fail because Litex does not infer that
+     `s` is finite from `s power_set(S)` and `S finite_set`.
+   - Next step: add or propose an inference rule for finite subsets of finite
+     sets, or introduce a standard fixed-cardinality subset object.
+
+3. `blocked_by_stdlib`
+   - Missing standard objects/theorems include:
+     - no-repeat sequences and permutation counts;
+     - falling factorial count theorem;
+     - quotient counting for repeated or indistinguishable objects;
+     - stars-and-bars for integer solution counts;
+     - binomial and multinomial finite-sum interfaces.
+
+4. `blocked_by_diagnostics`
+   - Some verifier outputs are technically correct but still indirect for a
+     translation workflow.
+   - A useful future improvement is to make errors suggest the missing object or
+     theorem more directly, for example fixed-cardinality subset support.
+
+## Concrete Examples of the Feedback Loop
+
+### Basic counting principle
+
+The abstract theorem is now generated as a general Litex statement:
 
 ```litex
-forall x R:
-    x = 2
-    =>:
-        x + 1 = 3
-        x^2 = 4
+prove:
+    forall A, B finite_set, m, n N:
+        count(A) = m
+        count(B) = n
+        =>:
+            count(cart(A, B)) = count(A) * count(B) = m * n
 ```
 
-Read it as ordinary mathematics: for every real number `x`, if `x = 2`, then
-`x + 1 = 3` and `x^2 = 4`. Litex checks the two conclusions by using the
-assumption `x = 2`, routine rewriting, and arithmetic.
+This verifies successfully and uses Litex's Cartesian-product count support.
 
-This is the central idea of Litex: **users write facts; Litex grows a verified
-context**. A Litex file introduces objects, states facts about them, checks
-which facts follow, stores the accepted ones, and makes them available to the
-lines that come after.
+### Four die rolls
 
-Litex is not intended to replace any other proof assistant. It explores a
-different path in formal mathematics: whether a readable, fact-oriented
-interface can make it easier for AI systems and humans to translate
-natural-language problems and textbook theorems into checkable formal proof
-attempts. The goal is to make ordinary mathematical reasoning precise enough
-for machine feedback while preserving the structure and appearance of
-mathematical reasoning itself.
-
-## The First Mental Model
-
-Think of a Litex file as a small mathematical world that grows one checked fact
-at a time. You introduce the objects in the world, give yourself vocabulary,
-store general rules, and then ask Litex whether a new fact follows.
-
-A classical syllogism shows the shape:
+A concrete textbook problem is generated using the concrete objects from the
+problem:
 
 ```litex
-have human nonempty_set, Socrates human
-abstract_prop mortal(x)
+prove:
+    have S1 finite_set = {1, 2, 3, 4, 5, 6}
+    have S2 finite_set = {1, 2, 3, 4, 5, 6}
+    have S3 finite_set = {1, 2, 3, 4, 5, 6}
+    have S4 finite_set = {1, 2, 3, 4, 5, 6}
+    let outcomes finite_set:
+        outcomes = cart(S1, S2, S3, S4)
 
-know forall x human:
-    $mortal(x)
-
-$mortal(Socrates)
+    count(outcomes) = count(cart(S1, S2, S3, S4)) = count(S1) * count(S2) * count(S3) * count(S4)
+    count(S1) = count({1, 2, 3, 4, 5, 6}) = 6
+    count(S2) = count({1, 2, 3, 4, 5, 6}) = 6
+    count(S3) = count({1, 2, 3, 4, 5, 6}) = 6
+    count(S4) = count({1, 2, 3, 4, 5, 6}) = 6
+    count(outcomes) = 6 * 6 * 6 * 6 = 1296
 ```
 
-This says: Socrates is human; every human is mortal; therefore Socrates is
-mortal.
+This also verifies successfully.
 
-The four moves are the basic Litex loop:
+### Combination formula blocker
 
-1. `have human nonempty_set, Socrates human` builds a tiny world.
-2. `abstract_prop mortal(x)` adds a new word that can be used in facts.
-3. `know forall x human: ...` stores the general rule.
-4. `$mortal(Socrates)` asks Litex to verify the particular conclusion.
-
-The example is intentionally small, but it uses two assumption-facing tools:
-`abstract_prop` declares the vocabulary word `mortal`, and `know` assumes the
-general rule. Litex checks that the conclusion follows from that context; it
-does not prove the assumed rule from nothing.
-
-When Litex accepts that final line, the verifier output can explain the route
-it found. The exact JSON may include line numbers and more trace fields, but
-the important shape is:
-
-```text
-{
-  "result": "success",
-  "type": "AtomicFact",
-  "stmt": "$mortal(Socrates)",
-  "verified_by": {
-    "type": "cite forall fact",
-    "cited_stmt": "forall x human: $mortal(x)"
-  }
-}
-```
-
-The useful part is not only that a line succeeds. The output tells you whether
-the route was arithmetic, a known fact, a matching `forall`, or an inferred
-consequence. That makes Litex a feedback loop: write the next fact, run the
-checker, read what happened, and add the next piece of context.
-
-Every factual statement has exactly one of three outcomes: **true**,
-**unknown**, or **error**. `true` means Litex found a proof path, such as a
-builtin rule, a known fact, or a known `forall` fact. `unknown` means the
-statement is meaningful, but Litex did not find enough verified information to
-prove it. `error` means the line cannot be checked as a valid fact, often
-because the syntax is wrong or some object is not well-defined, such as an
-undeclared name, a function argument outside its domain, or `1 / 0`.
-
-## How is Litex Different
-
-Litex supports two complementary ways to verify a fact.
-
-The explicit route is `by thm`: give a theorem a name, remember that name, and
-cite it with the required arguments. This is closer to the named-theorem style
-used by Lean and other formal proof systems.
+The natural object-level Litex attempt is:
 
 ```litex
-have human nonempty_set, Socrates human
-abstract_prop mortal(x)
-
-thm all_humans_are_mortal:
-    prove:
-        forall x human:
-            $mortal(x)
-    know $mortal(x)
-
-by thm all_humans_are_mortal(Socrates)
-$mortal(Socrates)
+prove:
+    have choose fn(n, r N) N
+    forall S finite_set, r N:
+        count({s power_set(S): count(s) = r}) = choose(count(S), r)
 ```
 
-The Lean shape is similar: keep the universal fact under a name, then apply
-that name to the object you need.
+The current blocker is that Litex cannot prove the set-builder is well-defined,
+because it cannot infer that `s` is finite inside `count(s)`.
 
-```lean
-variable (Human : Type)
-variable (Socrates : Human)
-variable (mortal : Human -> Prop)
-variable (all_humans_are_mortal : forall x : Human, mortal x)
+## Next Steps
 
-example : mortal Socrates := by
-  exact all_humans_are_mortal Socrates
-```
+The most useful next work is:
 
-The Litex-native route is pattern matching against the verified context. Instead
-of naming and citing the theorem, you can leave the universal fact in context
-and write the conclusion directly:
-
-```litex
-have human nonempty_set, Socrates human
-abstract_prop mortal(x)
-
-know forall x human:
-    $mortal(x)
-
-$mortal(Socrates)
-```
-
-Here Litex matches `$mortal(Socrates)` against the known `forall`, checks that
-`Socrates human` is already in context, substitutes `x` with `Socrates`, and
-verifies the conclusion. This is the core difference in proof style: Litex can
-use named theorem calls when names make the proof clearer, but it also lets
-ordinary factual lines drive verification by their mathematical shape.
-
->  This example uses two assumption-facing tools. `abstract_prop` declares an uninterpreted predicate name, and `know` assumes a fact about it, similar in role to Lean's `by sorry`. They are useful for axioms and proof skeletons, but final artifacts should replace, justify, or explicitly record them as proof debt.
-
-## Goals of Litex
-
-Litex is experimental, but it is aiming at three simple things:
-
-1. **Audit AI-generated mathematical derivations.** As generation gets cheaper,
-checking assumptions, malformed facts, missing steps, and remaining proof debt
-becomes the bottleneck.
-2. **Support scientific discovery.** Turn verification into a fast loop of
-trying ideas, repairing arguments, and reusing patterns.
-3. **A formal mathematical language that inspires everyone.** Formal math should
-be a usable, readable medium for learning, communication, and research, close
-enough to everyday math that students, mathematicians, AI agents, and curious
-readers can benefit from rigor without losing sight of the ideas.
-
-This route comes with a clear audit obligation. A Litex result should be read
-relative to its trusted background: builtin rules, inference rules,
-standard-library facts, and any explicit `know` assumptions. The project goal
-is not to hide that boundary; it is to make the boundary visible while keeping
-the user-facing proof script close to ordinary mathematical writing.
-
-Here is the whole landscape of Litex kernel:
-
-<div align="center">
-  <img src="assets/verifier_flow.png" alt="Litex kernel" width="1000">
-  <p><em>Litex kernel: the core components and their relationships.</em></p>
-</div>
-
-## Starting Points
-
-Litex keeps the public documentation small:
-
-1. [Setup: Download Litex](https://litexlang.com/doc/Setup): install Litex,
-   run files, and understand CLI output.
-2. [Manual](https://litexlang.com/doc/Manual): the source of truth for syntax,
-   statements, proof flow, builtin rules, and inference.
-3. [FAQ](https://litexlang.com/doc/FAQ): design rationale, trust boundaries,
-   comparison notes, and old overview material in condensed form.
-4. [Litex vs Lean](https://litexlang.com/doc/Litex_vs_Lean): dedicated
-   comparison with Lean's interface and ecosystem.
-5. [Litex 中文介绍](https://litexlang.com/doc/%E4%B8%AD%E6%96%87%E7%AE%80%E8%A6%81%E4%BB%8B%E7%BB%8D): Chinese introduction and project framing.
-
-Resources:
-
-1. [Litex Kernel and Documents](https://github.com/litexlang/golitex)
-2. [litexpy: Use Litex in Python](https://github.com/litexlang/litexpy)
-3. [litex-lang on crates.io: Use Litex in Rust](https://crates.io/crates/litex-lang)
-4. [Hugging Face: Litex code examples and datasets](https://huggingface.co/litexlang)
-
-Contact us:
-
-1. [Email](mailto:litexlang@outlook.com)
-2. [Zulip community](https://litex.zulipchat.com/join/c4e7foogy6paz2sghjnbujov/)
-
-## Special Thanks
-
-_未来没有计划，但一定更好。_
-
-_- 樊振东在巴黎奥运会后接受采访时说_
-
-<div align="center">
-  <img src="https://publisher.litexlang.org/Little_Little_O.PNG" alt="The Litex Logo" width="200">
-  <p><em>Litex Mascot: Little Little O, a curious baby bird full of wonder</em></p>
-</div>
-
-The path of Litex is a deliberate trade-off. Litex accepts a larger trusted
-implementation than small-kernel systems in order to make the proof surface
-lighter. The system tries to do more routine checking in the verifier so users
-can spend more of their attention on the mathematical sequence of facts. This uniqueness is the core value of Litex as a proof assistant, but it also makes contribution to Litex more difficult and demanding. We welcome young talents to try Litex and contribute to it.
-
-Hi, I’m Jiachen Shen, creator of Litex. I am deeply grateful to Wei Lin, Siqi Sun, Peng Sun, Siqi Guo, Chenxuan Huang, Yan Lu, Sheng Xu, Zhaoxuan Hong, Xiuyuan Lu, and Yunwen Guo for their support and advice. I am sure this list will keep growing.
+1. Improve generated formulation quality to reduce fallback records.
+2. Add or propose inference support for finite subsets of finite sets.
+3. Design standard objects for fixed-cardinality subsets, permutations,
+   no-repeat sequences, quotient counts, and integer solution sets.
+4. Convert successful attempts into clean examples or benchmark items.
+5. Keep failed attempts as minimal reproductions for Litex standard-library and
+   diagnostic improvements.
