@@ -11,6 +11,25 @@ This chapter is useful because it contains basic counting principles,
 permutations, combinations, binomial and multinomial formulas, quotient-counting
 ideas, and stars-and-bars arguments.
 
+## Three Main Contributions
+
+1. **Built two project-local skills from the Litex manual and contribution
+   workflow.** The two skills are stored under `docs/skills/`:
+   `docs/skills/theorem-to-litex/SKILL.md` for translating mathematical
+   statements into Litex, and `docs/skills/contribute-to-litex/SKILL.md` for
+   Litex contribution workflows.
+2. **Used code to extract Chapter 1 theorem/example records and proof routes
+   from a probability textbook PDF.** The resulting artifact is
+   `yaoge/chapter1_litex_routes.md`. It shows that it is feasible to use code
+   to obtain textbook theorem/example content and reconstruct proof paths that
+   can be attempted in Litex.
+3. **Used code to translate those proof routes into Litex syntax and verify the
+   generated files.** The generated `.lit` files and run logs are stored under
+   `yaoge/第一章定理与例题/`, especially
+   `yaoge/第一章定理与例题/run_results.md`. Many files still fail, but the
+   failures provide concrete directions for improving Litex's formulation
+   pipeline, inference rules, standard library, and diagnostics.
+
 ## Contribution Summary
 
 My work builds an end-to-end feedback loop:
@@ -38,6 +57,10 @@ still missing.
   source items.
 - `yaoge/extract_probability_theorems.py`: extracts theorem/problem records and
   proof routes from the probability textbook PDF.
+- `yaoge/chapter1_litex_routes.md`: important result display for the extracted
+  Chapter 1 theorem/problem contents and Litex-oriented proof routes. This file
+  demonstrates that PDF-to-proof-route extraction is feasible for textbook
+  translation pressure tests.
 - `yaoge/generate_chapter1_litex_files.py`: creates initial scaffold `.lit`
   files from extracted Chapter 1 proof-route records.
 - `yaoge/materialize_chapter1_litex_attempts.py`: turns scaffold records into
