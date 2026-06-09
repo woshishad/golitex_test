@@ -20,6 +20,40 @@
 
 </div>
 
+## About This Work Report
+
+This repository is also used as my personal Litex contribution work report.
+My current contribution focuses on using real textbook translation as a
+pressure test for Litex, especially Chapter 1 of *A First Course in
+Probability*.
+
+The work in `yaoge/` records a complete feedback loop:
+
+1. Extract theorem, proposition, exercise, and self-test items from the
+   probability textbook.
+2. Preserve each item's mathematical proof route before writing Litex code.
+3. Generate `.lit` proof attempts for Chapter 1 items.
+4. Run Litex on each generated file and record exact verifier output.
+5. Classify failures into formulation, inference-rule, standard-library,
+   syntax, or diagnostic blockers.
+
+Current Chapter 1 artifacts include:
+
+- `yaoge/extract_probability_theorems.py`: extracts theorem/problem records and
+  proof routes from the textbook PDF.
+- `yaoge/materialize_chapter1_litex_attempts.py`: turns structured records into
+  executable Litex attempts while distinguishing abstract theorems from
+  concrete problems.
+- `yaoge/run_chapter1_litex_attempts.py`: runs all generated `.lit` files and
+  writes summary and JSON logs.
+- `yaoge/第一章定理与例题/`: generated Chapter 1 Litex attempts, run logs, and
+  blocker notes.
+
+This contribution is intentionally evidence-oriented: successful files become
+examples, while failed files are kept as minimal boundary tests for missing
+Litex language support, inference rules, standard-library theorems, and clearer
+diagnostics.
+
 ## What is Litex?
 
 _Truth is ever to be found in simplicity, and not in the multiplicity and confusion of things._
