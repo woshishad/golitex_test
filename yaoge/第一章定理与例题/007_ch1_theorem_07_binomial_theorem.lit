@@ -1,6 +1,7 @@
 # id: ch1_theorem_07_binomial_theorem
 # source: A First Course in Probability, Chapter 1
 # kind: theorem
+# source_item_shape: abstract
 # source_section: 1.4 Combinations
 # pages: 23-24
 # topic: combinations
@@ -15,10 +16,10 @@
 # blocker: blocked_by_stdlib
 # notes: Concrete polynomial identities are checkable; the general finite-sum theorem needs
 #        more support.
-# verification_boundary: This file is a proof-route scaffold generated from the Chapter 1
-#                        extraction. Commented proof_debt and intended_litex_attempt lines
-#                        are not verified. Only uncommented Litex statements count as
-#                        verifier evidence.
+# verification_boundary: The executable block below is a first Litex attempt generated from
+#                        the book proof route. If it fails, keep the exact verifier output
+#                        and classify the blocker instead of replacing the object-level
+#                        statement by arithmetic.
 
 # book_proof_chain:
 # - Induction route: prove base n=1.
@@ -34,17 +35,8 @@
 # - polynomial equality
 # - induction on n
 
-# proof_debt: Formalize the source proof route directly and keep the first failing
-#             object-level Litex statement here or in the nearby todo.md.
-
-# intended_litex_attempt:
-# 1. Name the counted mathematical object before evaluating any numeric expression.
-# 2. Introduce or reuse Litex object: finite sum over k.
-# 3. Introduce or reuse Litex object: choose(n,k).
-# 4. Introduce or reuse Litex object: polynomial equality.
-# 5. Introduce or reuse Litex object: induction on n.
-# next_verifier_step:
-# - Replace these comments with the smallest object-level Litex statement.
-# - Run the verifier.
-# - Record the exact first error or unknown line before simplifying the target.
-# expected_primary_blocker: blocked_by_stdlib
+# executable_litex_attempt:
+prove:
+    have binomial_expansion_rhs fn(n N, x, y R) R
+    forall n N, x, y R:
+        (x + y)^n = binomial_expansion_rhs(n, x, y)

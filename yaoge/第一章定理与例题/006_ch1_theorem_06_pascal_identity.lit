@@ -1,6 +1,7 @@
 # id: ch1_theorem_06_pascal_identity
 # source: A First Course in Probability, Chapter 1
 # kind: theorem
+# source_item_shape: abstract
 # source_section: 1.4 Combinations
 # pages: 22-22
 # topic: combinations
@@ -15,10 +16,10 @@
 # status: blocked
 # blocker: blocked_by_stdlib
 # notes: Needs fixed-cardinality subset count and disjoint partition machinery.
-# verification_boundary: This file is a proof-route scaffold generated from the Chapter 1
-#                        extraction. Commented proof_debt and intended_litex_attempt lines
-#                        are not verified. Only uncommented Litex statements count as
-#                        verifier evidence.
+# verification_boundary: The executable block below is a first Litex attempt generated from
+#                        the book proof route. If it fails, keep the exact verifier output
+#                        and classify the blocker instead of replacing the object-level
+#                        statement by arithmetic.
 
 # book_proof_chain:
 # - Fix one distinguished element of an n-element set.
@@ -32,16 +33,8 @@
 # - disjoint union
 # - count(union(A,B))
 
-# proof_debt: Formalize the source proof route directly and keep the first failing
-#             object-level Litex statement here or in the nearby todo.md.
-
-# intended_litex_attempt:
-# 1. Name the counted mathematical object before evaluating any numeric expression.
-# 2. Introduce or reuse Litex object: fixed-cardinality subsets.
-# 3. Introduce or reuse Litex object: disjoint union.
-# 4. Introduce or reuse Litex object: count(union(A,B)).
-# next_verifier_step:
-# - Replace these comments with the smallest object-level Litex statement.
-# - Run the verifier.
-# - Record the exact first error or unknown line before simplifying the target.
-# expected_primary_blocker: blocked_by_stdlib
+# executable_litex_attempt:
+prove:
+    have choose fn(n, r N) N
+    forall S finite_set, distinguished S, r N:
+        count({s power_set(S): count(s) = r}) = choose(count(S) - 1, r - 1) + choose(count(S) - 1, r)

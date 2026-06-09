@@ -1,6 +1,7 @@
 # id: ch1_problems_05
 # source: A First Course in Probability, Chapter 1
 # kind: problem
+# source_item_shape: concrete
 # source_section: problems
 # pages: 31-31
 # topic: integer solutions
@@ -19,10 +20,10 @@
 # blocker: 
 # notes: Candidate route for direct verification. Do not mark checkable until a concrete
 #        .lit file is generated and run.
-# verification_boundary: This file is a proof-route scaffold generated from the Chapter 1
-#                        extraction. Commented proof_debt and intended_litex_attempt lines
-#                        are not verified. Only uncommented Litex statements count as
-#                        verifier evidence.
+# verification_boundary: The executable block below is a first Litex attempt generated from
+#                        the book proof route. If it fails, keep the exact verifier output
+#                        and classify the blocker instead of replacing the object-level
+#                        statement by arithmetic.
 
 # book_proof_chain:
 # - Represent each independent position as a finite set.
@@ -35,15 +36,16 @@
 # - cart(S1,...,Sk)
 # - count(cart(...))
 
-# proof_debt: Generate and run the concrete object-level Litex statement before changing
-#             this item from translated to checkable.
+# executable_litex_attempt:
+prove:
+    have S1 finite_set = {1, 2, 3, 4, 5, 6, 7, 8}
+    have S2 finite_set = {1, 2}
+    have S3 finite_set = {1, 2, 3, 4, 5, 6, 7, 8, 9}
+    let outcomes finite_set:
+        outcomes = cart(S1, S2, S3)
 
-# intended_litex_attempt:
-# 1. Name the counted mathematical object before evaluating any numeric expression.
-# 2. Introduce or reuse Litex object: finite sets for positions.
-# 3. Introduce or reuse Litex object: cart(S1,...,Sk).
-# 4. Introduce or reuse Litex object: count(cart(...)).
-# next_verifier_step:
-# - Replace these comments with the smallest object-level Litex statement.
-# - Run the verifier.
-# - Record the exact first error or unknown line before simplifying the target.
+    count(outcomes) = count(cart(S1, S2, S3)) = count(S1) * count(S2) * count(S3)
+    count(S1) = count({1, 2, 3, 4, 5, 6, 7, 8}) = 8
+    count(S2) = count({1, 2}) = 2
+    count(S3) = count({1, 2, 3, 4, 5, 6, 7, 8, 9}) = 9
+    count(outcomes) = 8 * 2 * 9 = 144

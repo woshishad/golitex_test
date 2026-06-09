@@ -1,6 +1,7 @@
 # id: ch1_problems_25
 # source: A First Course in Probability, Chapter 1
 # kind: problem
+# source_item_shape: concrete
 # source_section: problems
 # pages: 32-32
 # topic: combinatorial analysis
@@ -16,10 +17,10 @@
 # status: translated
 # blocker: blocked_by_formulation
 # notes: Manual classification needed.
-# verification_boundary: This file is a proof-route scaffold generated from the Chapter 1
-#                        extraction. Commented proof_debt and intended_litex_attempt lines
-#                        are not verified. Only uncommented Litex statements count as
-#                        verifier evidence.
+# verification_boundary: The executable block below is a first Litex attempt generated from
+#                        the book proof route. If it fails, keep the exact verifier output
+#                        and classify the blocker instead of replacing the object-level
+#                        statement by arithmetic.
 
 # book_proof_chain:
 # - Identify the finite outcome object described by the problem.
@@ -32,15 +33,7 @@
 # - finite outcome set
 # - count(...)
 
-# proof_debt: Formalize the source proof route directly and keep the first failing
-#             object-level Litex statement here or in the nearby todo.md.
-
-# intended_litex_attempt:
-# 1. Name the counted mathematical object before evaluating any numeric expression.
-# 2. Introduce or reuse Litex object: finite outcome set.
-# 3. Introduce or reuse Litex object: count(...).
-# next_verifier_step:
-# - Replace these comments with the smallest object-level Litex statement.
-# - Run the verifier.
-# - Record the exact first error or unknown line before simplifying the target.
-# expected_primary_blocker: blocked_by_formulation
+# executable_litex_attempt:
+prove:
+    forall outcomes finite_set, answer N:
+        count(outcomes) = answer

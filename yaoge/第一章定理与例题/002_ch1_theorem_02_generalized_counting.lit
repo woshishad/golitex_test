@@ -1,6 +1,7 @@
 # id: ch1_theorem_02_generalized_counting
 # source: A First Course in Probability, Chapter 1
 # kind: theorem
+# source_item_shape: abstract
 # source_section: 1.2 The Basic Principle of Counting
 # pages: 17-17
 # topic: combinatorial analysis
@@ -15,10 +16,10 @@
 # status: translated
 # blocker: blocked_by_stdlib
 # notes: Fixed arity is checkable; arbitrary r needs a finite-list/product theorem.
-# verification_boundary: This file is a proof-route scaffold generated from the Chapter 1
-#                        extraction. Commented proof_debt and intended_litex_attempt lines
-#                        are not verified. Only uncommented Litex statements count as
-#                        verifier evidence.
+# verification_boundary: The executable block below is a first Litex attempt generated from
+#                        the book proof route. If it fails, keep the exact verifier output
+#                        and classify the blocker instead of replacing the object-level
+#                        statement by arithmetic.
 
 # book_proof_chain:
 # - For a fixed finite number of stages, introduce finite sets A1, ..., Ar.
@@ -31,16 +32,12 @@
 # - count(cart(...))
 # - finite product over stage counts
 
-# proof_debt: Formalize the source proof route directly and keep the first failing
-#             object-level Litex statement here or in the nearby todo.md.
-
-# intended_litex_attempt:
-# 1. Name the counted mathematical object before evaluating any numeric expression.
-# 2. Introduce or reuse Litex object: cart(A1, ..., Ar).
-# 3. Introduce or reuse Litex object: count(cart(...)).
-# 4. Introduce or reuse Litex object: finite product over stage counts.
-# next_verifier_step:
-# - Replace these comments with the smallest object-level Litex statement.
-# - Run the verifier.
-# - Record the exact first error or unknown line before simplifying the target.
-# expected_primary_blocker: blocked_by_stdlib
+# executable_litex_attempt:
+prove:
+    forall A, B, C, D finite_set, a, b, c, d N:
+        count(A) = a
+        count(B) = b
+        count(C) = c
+        count(D) = d
+        =>:
+            count(cart(A, B, C, D)) = count(A) * count(B) * count(C) * count(D) = a * b * c * d

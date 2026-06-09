@@ -1,6 +1,7 @@
 # id: ch1_theorem_01_basic_counting
 # source: A First Course in Probability, Chapter 1
 # kind: theorem
+# source_item_shape: abstract
 # source_section: 1.2 The Basic Principle of Counting
 # pages: 17-17
 # topic: combinatorial analysis
@@ -18,10 +19,10 @@
 # blocker: 
 # notes: Candidate route for direct verification. Keep as translated until a concrete .lit
 #        file is generated and run.
-# verification_boundary: This file is a proof-route scaffold generated from the Chapter 1
-#                        extraction. Commented proof_debt and intended_litex_attempt lines
-#                        are not verified. Only uncommented Litex statements count as
-#                        verifier evidence.
+# verification_boundary: The executable block below is a first Litex attempt generated from
+#                        the book proof route. If it fails, keep the exact verifier output
+#                        and classify the blocker instead of replacing the object-level
+#                        statement by arithmetic.
 
 # book_proof_chain:
 # - Introduce finite sets A and B for the possible outcomes of the first and second
@@ -36,16 +37,10 @@
 # - cart(A, B)
 # - count(cart(A, B))
 
-# proof_debt: Generate and run the concrete object-level Litex statement before changing
-#             this item from translated to checkable.
-
-# intended_litex_attempt:
-# 1. Name the counted mathematical object before evaluating any numeric expression.
-# 2. Introduce or reuse Litex object: A finite_set.
-# 3. Introduce or reuse Litex object: B finite_set.
-# 4. Introduce or reuse Litex object: cart(A, B).
-# 5. Introduce or reuse Litex object: count(cart(A, B)).
-# next_verifier_step:
-# - Replace these comments with the smallest object-level Litex statement.
-# - Run the verifier.
-# - Record the exact first error or unknown line before simplifying the target.
+# executable_litex_attempt:
+prove:
+    forall A, B finite_set, m, n N:
+        count(A) = m
+        count(B) = n
+        =>:
+            count(cart(A, B)) = count(A) * count(B) = m * n

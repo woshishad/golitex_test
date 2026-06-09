@@ -1,6 +1,7 @@
 # id: ch1_theorem_08_multinomial_coefficient
 # source: A First Course in Probability, Chapter 1
 # kind: theorem
+# source_item_shape: abstract
 # source_section: 1.5 Multinomial Coefficients
 # pages: 25-25
 # topic: multinomial coefficients
@@ -14,10 +15,10 @@
 # status: blocked
 # blocker: blocked_by_stdlib
 # notes: Depends on combination formula and labeled finite partitions.
-# verification_boundary: This file is a proof-route scaffold generated from the Chapter 1
-#                        extraction. Commented proof_debt and intended_litex_attempt lines
-#                        are not verified. Only uncommented Litex statements count as
-#                        verifier evidence.
+# verification_boundary: The executable block below is a first Litex attempt generated from
+#                        the book proof route. If it fails, keep the exact verifier output
+#                        and classify the blocker instead of replacing the object-level
+#                        statement by arithmetic.
 
 # book_proof_chain:
 # - Choose n1 items for group 1.
@@ -30,16 +31,8 @@
 # - fixed-cardinality subsets
 # - multinomial coefficient
 
-# proof_debt: Formalize the source proof route directly and keep the first failing
-#             object-level Litex statement here or in the nearby todo.md.
-
-# intended_litex_attempt:
-# 1. Name the counted mathematical object before evaluating any numeric expression.
-# 2. Introduce or reuse Litex object: labeled group tuple.
-# 3. Introduce or reuse Litex object: fixed-cardinality subsets.
-# 4. Introduce or reuse Litex object: multinomial coefficient.
-# next_verifier_step:
-# - Replace these comments with the smallest object-level Litex statement.
-# - Run the verifier.
-# - Record the exact first error or unknown line before simplifying the target.
-# expected_primary_blocker: blocked_by_stdlib
+# executable_litex_attempt:
+prove:
+    have choose fn(n, r N) N
+    forall S finite_set, r N:
+        count({s power_set(S): count(s) = r}) = choose(count(S), r)
