@@ -1,0 +1,47 @@
+# id: ch1_theorem_06_pascal_identity
+# source: A First Course in Probability, Chapter 1
+# kind: theorem
+# source_section: 1.4 Combinations
+# pages: 22-22
+# topic: combinations
+# difficulty: medium
+# natural_language_idea: C(n,r)=C(n-1,r-1)+C(n-1,r).
+# litex_code: this file
+# proof_attempt: Fix one distinguished element of an n-element set. Partition r-subsets by
+#                whether they contain that element. Subsets containing it correspond to
+#                (r-1)-subsets of the remaining n-1 elements. Subsets not containing it
+#                correspond to r-subsets of the remaining n-1 elements. Use disjoint union
+#                count to add the two counts.
+# status: blocked
+# blocker: blocked_by_stdlib
+# notes: Needs fixed-cardinality subset count and disjoint partition machinery.
+# verification_boundary: This file is a proof-route scaffold generated from the Chapter 1
+#                        extraction. Commented proof_debt and intended_litex_attempt lines
+#                        are not verified. Only uncommented Litex statements count as
+#                        verifier evidence.
+
+# book_proof_chain:
+# - Fix one distinguished element of an n-element set.
+# - Partition r-subsets by whether they contain that element.
+# - Subsets containing it correspond to (r-1)-subsets of the remaining n-1 elements.
+# - Subsets not containing it correspond to r-subsets of the remaining n-1 elements.
+# - Use disjoint union count to add the two counts.
+
+# litex_objects_or_predicates:
+# - fixed-cardinality subsets
+# - disjoint union
+# - count(union(A,B))
+
+# proof_debt: Formalize the source proof route directly and keep the first failing
+#             object-level Litex statement here or in the nearby todo.md.
+
+# intended_litex_attempt:
+# 1. Name the counted mathematical object before evaluating any numeric expression.
+# 2. Introduce or reuse Litex object: fixed-cardinality subsets.
+# 3. Introduce or reuse Litex object: disjoint union.
+# 4. Introduce or reuse Litex object: count(union(A,B)).
+# next_verifier_step:
+# - Replace these comments with the smallest object-level Litex statement.
+# - Run the verifier.
+# - Record the exact first error or unknown line before simplifying the target.
+# expected_primary_blocker: blocked_by_stdlib

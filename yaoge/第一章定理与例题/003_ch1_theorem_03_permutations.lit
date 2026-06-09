@@ -1,0 +1,48 @@
+# id: ch1_theorem_03_permutations
+# source: A First Course in Probability, Chapter 1
+# kind: theorem
+# source_section: 1.3 Permutations
+# pages: 19-19
+# topic: permutations
+# difficulty: medium
+# natural_language_idea: There are n! = n(n-1)...3*2*1 possible linear orderings of n
+#                        distinct items.
+# litex_code: this file
+# proof_attempt: Define the set of no-repeat sequences of length n drawn from an n-element
+#                finite set. Expose the staged proof route: n choices for the first
+#                position, n-1 for the second, and so on. Prove a bijection between
+#                no-repeat sequences and staged choice records. Use the generalized counting
+#                principle to obtain n!.
+# status: blocked
+# blocker: blocked_by_stdlib
+# notes: Needs a permutation/no-repeat sequence object and factorial theorem.
+# verification_boundary: This file is a proof-route scaffold generated from the Chapter 1
+#                        extraction. Commented proof_debt and intended_litex_attempt lines
+#                        are not verified. Only uncommented Litex statements count as
+#                        verifier evidence.
+
+# book_proof_chain:
+# - Define the set of no-repeat sequences of length n drawn from an n-element finite set.
+# - Expose the staged proof route: n choices for the first position, n-1 for the second, and
+#   so on.
+# - Prove a bijection between no-repeat sequences and staged choice records.
+# - Use the generalized counting principle to obtain n!.
+
+# litex_objects_or_predicates:
+# - permutations(S)
+# - no-repeat tuple
+# - factorial(count(S))
+
+# proof_debt: Formalize the source proof route directly and keep the first failing
+#             object-level Litex statement here or in the nearby todo.md.
+
+# intended_litex_attempt:
+# 1. Name the counted mathematical object before evaluating any numeric expression.
+# 2. Introduce or reuse Litex object: permutations(S).
+# 3. Introduce or reuse Litex object: no-repeat tuple.
+# 4. Introduce or reuse Litex object: factorial(count(S)).
+# next_verifier_step:
+# - Replace these comments with the smallest object-level Litex statement.
+# - Run the verifier.
+# - Record the exact first error or unknown line before simplifying the target.
+# expected_primary_blocker: blocked_by_stdlib

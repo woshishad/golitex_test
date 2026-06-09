@@ -1,0 +1,48 @@
+# id: ch1_problems_21
+# source: A First Course in Probability, Chapter 1
+# kind: problem
+# source_section: problems
+# pages: 32-32
+# topic: combinatorial analysis
+# difficulty: medium
+# natural_language_idea: Consider the grid of points shown here. Suppose that, starting at
+#                        the point labeled A, you can go one step up or one step to the
+#                        right at each move. This procedure is continued until the point
+#                        labeled B is reached. How many different paths from A to B are
+#                        possible? Hint: Note that to reach B from A, you must take 4 steps
+#                        to the right and 3 steps upward. B A
+# litex_code: this file
+# proof_attempt: Represent each path as a word in moves R and U. Fix the number of R and U
+#                moves required. Count words with a fixed number of one move type using
+#                combinations.
+# status: blocked
+# blocker: blocked_by_stdlib
+# notes: Needs fixed-cardinality subset or fixed-weight word counting.
+# verification_boundary: This file is a proof-route scaffold generated from the Chapter 1
+#                        extraction. Commented proof_debt and intended_litex_attempt lines
+#                        are not verified. Only uncommented Litex statements count as
+#                        verifier evidence.
+
+# book_proof_chain:
+# - Represent each path as a word in moves R and U.
+# - Fix the number of R and U moves required.
+# - Count words with a fixed number of one move type using combinations.
+
+# litex_objects_or_predicates:
+# - binary word
+# - fixed-cardinality subset of move positions
+# - choose(n,k)
+
+# proof_debt: Formalize the source proof route directly and keep the first failing
+#             object-level Litex statement here or in the nearby todo.md.
+
+# intended_litex_attempt:
+# 1. Name the counted mathematical object before evaluating any numeric expression.
+# 2. Introduce or reuse Litex object: binary word.
+# 3. Introduce or reuse Litex object: fixed-cardinality subset of move positions.
+# 4. Introduce or reuse Litex object: choose(n,k).
+# next_verifier_step:
+# - Replace these comments with the smallest object-level Litex statement.
+# - Run the verifier.
+# - Record the exact first error or unknown line before simplifying the target.
+# expected_primary_blocker: blocked_by_stdlib

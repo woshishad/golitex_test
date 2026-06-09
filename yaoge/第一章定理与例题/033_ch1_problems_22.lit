@@ -1,0 +1,44 @@
+# id: ch1_problems_22
+# source: A First Course in Probability, Chapter 1
+# kind: problem
+# source_section: problems
+# pages: 32-32
+# topic: combinatorial analysis
+# difficulty: medium
+# natural_language_idea: In Problem 21, how many different paths are there from A to B that
+#                        go through the point circled in the following lattice? B A
+# litex_code: this file
+# proof_attempt: Represent each path as a word in moves R and U. Fix the number of R and U
+#                moves required. Count words with a fixed number of one move type using
+#                combinations.
+# status: blocked
+# blocker: blocked_by_stdlib
+# notes: Needs fixed-cardinality subset or fixed-weight word counting.
+# verification_boundary: This file is a proof-route scaffold generated from the Chapter 1
+#                        extraction. Commented proof_debt and intended_litex_attempt lines
+#                        are not verified. Only uncommented Litex statements count as
+#                        verifier evidence.
+
+# book_proof_chain:
+# - Represent each path as a word in moves R and U.
+# - Fix the number of R and U moves required.
+# - Count words with a fixed number of one move type using combinations.
+
+# litex_objects_or_predicates:
+# - binary word
+# - fixed-cardinality subset of move positions
+# - choose(n,k)
+
+# proof_debt: Formalize the source proof route directly and keep the first failing
+#             object-level Litex statement here or in the nearby todo.md.
+
+# intended_litex_attempt:
+# 1. Name the counted mathematical object before evaluating any numeric expression.
+# 2. Introduce or reuse Litex object: binary word.
+# 3. Introduce or reuse Litex object: fixed-cardinality subset of move positions.
+# 4. Introduce or reuse Litex object: choose(n,k).
+# next_verifier_step:
+# - Replace these comments with the smallest object-level Litex statement.
+# - Run the verifier.
+# - Record the exact first error or unknown line before simplifying the target.
+# expected_primary_blocker: blocked_by_stdlib

@@ -1,0 +1,46 @@
+# id: ch1_theorem_09_multinomial_theorem
+# source: A First Course in Probability, Chapter 1
+# kind: theorem
+# source_section: 1.5 Multinomial Coefficients
+# pages: 26-27
+# topic: multinomial coefficients
+# difficulty: medium
+# natural_language_idea: The expansion of (x1+...+xr)^n is indexed by nonnegative
+#                        n1+...+nr=n with multinomial coefficients.
+# litex_code: this file
+# proof_attempt: Expand the product as n choices of one variable among x1,...,xr. Group
+#                terms by how many times each variable is selected. Use the multinomial
+#                coefficient to count selections with fixed exponents. Sum over all
+#                nonnegative exponent vectors whose entries add to n.
+# status: blocked
+# blocker: blocked_by_stdlib
+# notes: Needs finite multi-index sums and multinomial coefficient interfaces.
+# verification_boundary: This file is a proof-route scaffold generated from the Chapter 1
+#                        extraction. Commented proof_debt and intended_litex_attempt lines
+#                        are not verified. Only uncommented Litex statements count as
+#                        verifier evidence.
+
+# book_proof_chain:
+# - Expand the product as n choices of one variable among x1,...,xr.
+# - Group terms by how many times each variable is selected.
+# - Use the multinomial coefficient to count selections with fixed exponents.
+# - Sum over all nonnegative exponent vectors whose entries add to n.
+
+# litex_objects_or_predicates:
+# - finite multi-index sum
+# - nonnegative exponent vectors
+# - multinomial coefficient
+
+# proof_debt: Formalize the source proof route directly and keep the first failing
+#             object-level Litex statement here or in the nearby todo.md.
+
+# intended_litex_attempt:
+# 1. Name the counted mathematical object before evaluating any numeric expression.
+# 2. Introduce or reuse Litex object: finite multi-index sum.
+# 3. Introduce or reuse Litex object: nonnegative exponent vectors.
+# 4. Introduce or reuse Litex object: multinomial coefficient.
+# next_verifier_step:
+# - Replace these comments with the smallest object-level Litex statement.
+# - Run the verifier.
+# - Record the exact first error or unknown line before simplifying the target.
+# expected_primary_blocker: blocked_by_stdlib

@@ -1,0 +1,48 @@
+# id: ch1_problems_07
+# source: A First Course in Probability, Chapter 1
+# kind: problem
+# source_section: problems
+# pages: 31-31
+# topic: combinatorial analysis
+# difficulty: medium
+# natural_language_idea: (a) In how many ways can 3 boys and 3 girls sit in ar o w? (b) In
+#                        how many ways can 3 boys and 3 girls sit in a row if the boys and
+#                        the girls are each to sit together? (c) In how many ways if only
+#                        the boys must sit together? (d) In how many ways if no two people
+#                        of the same sex are allowed to sit together?
+# litex_code: this file
+# proof_attempt: Represent the outcome as a no-repeat sequence or assignment. Use staged
+#                choices: n choices, then n-1, and so on. Prove a bijection between staged
+#                records and the source outcome object. Evaluate the product.
+# status: blocked
+# blocker: blocked_by_stdlib
+# notes: Needs permutation/no-repeat sequence support.
+# verification_boundary: This file is a proof-route scaffold generated from the Chapter 1
+#                        extraction. Commented proof_debt and intended_litex_attempt lines
+#                        are not verified. Only uncommented Litex statements count as
+#                        verifier evidence.
+
+# book_proof_chain:
+# - Represent the outcome as a no-repeat sequence or assignment.
+# - Use staged choices: n choices, then n-1, and so on.
+# - Prove a bijection between staged records and the source outcome object.
+# - Evaluate the product.
+
+# litex_objects_or_predicates:
+# - no-repeat tuple
+# - permutation(S)
+# - staged product
+
+# proof_debt: Formalize the source proof route directly and keep the first failing
+#             object-level Litex statement here or in the nearby todo.md.
+
+# intended_litex_attempt:
+# 1. Name the counted mathematical object before evaluating any numeric expression.
+# 2. Introduce or reuse Litex object: no-repeat tuple.
+# 3. Introduce or reuse Litex object: permutation(S).
+# 4. Introduce or reuse Litex object: staged product.
+# next_verifier_step:
+# - Replace these comments with the smallest object-level Litex statement.
+# - Run the verifier.
+# - Record the exact first error or unknown line before simplifying the target.
+# expected_primary_blocker: blocked_by_stdlib

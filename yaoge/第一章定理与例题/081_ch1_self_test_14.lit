@@ -1,0 +1,45 @@
+# id: ch1_self_test_14
+# source: A First Course in Probability, Chapter 1
+# kind: problem
+# source_section: self_test
+# pages: 36-36
+# topic: integer solutions
+# difficulty: medium
+# natural_language_idea: Determine the number of vectors (x1,..., xn) such that each xi is a
+#                        positive integer and n∑ i=1 xi <= k where k >= n.
+# litex_code: this file
+# proof_attempt: Represent the allocation or vector as integer variables x1,...,xr.
+#                Translate constraints into a sum equation and lower bounds. Shift variables
+#                if lower bounds are positive. Apply positive or nonnegative stars-and-bars.
+# status: blocked
+# blocker: blocked_by_stdlib
+# notes: Needs integer-solution set counting and stars-and-bars theorem.
+# verification_boundary: This file is a proof-route scaffold generated from the Chapter 1
+#                        extraction. Commented proof_debt and intended_litex_attempt lines
+#                        are not verified. Only uncommented Litex statements count as
+#                        verifier evidence.
+
+# book_proof_chain:
+# - Represent the allocation or vector as integer variables x1,...,xr.
+# - Translate constraints into a sum equation and lower bounds.
+# - Shift variables if lower bounds are positive.
+# - Apply positive or nonnegative stars-and-bars.
+
+# litex_objects_or_predicates:
+# - integer solution set
+# - variable shift
+# - stars-and-bars bijection
+
+# proof_debt: Formalize the source proof route directly and keep the first failing
+#             object-level Litex statement here or in the nearby todo.md.
+
+# intended_litex_attempt:
+# 1. Name the counted mathematical object before evaluating any numeric expression.
+# 2. Introduce or reuse Litex object: integer solution set.
+# 3. Introduce or reuse Litex object: variable shift.
+# 4. Introduce or reuse Litex object: stars-and-bars bijection.
+# next_verifier_step:
+# - Replace these comments with the smallest object-level Litex statement.
+# - Run the verifier.
+# - Record the exact first error or unknown line before simplifying the target.
+# expected_primary_blocker: blocked_by_stdlib

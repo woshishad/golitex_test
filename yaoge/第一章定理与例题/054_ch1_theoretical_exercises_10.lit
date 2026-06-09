@@ -1,0 +1,59 @@
+# id: ch1_theoretical_exercises_10
+# source: A First Course in Probability, Chapter 1
+# kind: problem
+# source_section: theoretical_exercises
+# pages: 33-33
+# topic: combinations
+# difficulty: medium
+# natural_language_idea: From a group of n people, suppose that we want to choose a
+#                        committee of k, k <= n, one of whom is to be designated as
+#                        chairperson. (a) By focusing first on the choice of the commit- tee
+#                        and then on the choice of the chair, argue that there are ⎨ n k ⎩ k
+#                        possible choices. (b) By focusing first on the choice of the
+#                        nonchair committee members and then on the choice of the chair,
+#                        argue that there are⎨ n k - 1 ⎩ (n - k + 1) possible choices. (c)
+#                        By focusing first on the choice of the chair and then on the choice
+#                        of the other committee members, argue that there are n ⎨ n - 1 k -
+#                        1 ⎩ possible choices. (d) Conclude from parts (a), (b), and (c)
+#                        that k ⎨ n k ⎩ = (n-k+ 1) ⎨ n k - 1 ⎩ = n ⎨ n - 1 k - 1 ⎩ (e) Use
+#                        the factorial definition of ⎨ m r ⎩ to verify the identity in part
+#                        (d).
+# litex_code: this file
+# proof_attempt: Identify the underlying finite population set. Represent the choice as a
+#                fixed-cardinality subset. If there are restrictions, partition the subset
+#                family or subtract forbidden subset families. Apply the combination formula
+#                or inclusion-exclusion.
+# status: blocked
+# blocker: blocked_by_infer_rule
+# notes: Known blocker: Litex currently needs better finite-subset/count inference for
+#        set-builder subsets.
+# verification_boundary: This file is a proof-route scaffold generated from the Chapter 1
+#                        extraction. Commented proof_debt and intended_litex_attempt lines
+#                        are not verified. Only uncommented Litex statements count as
+#                        verifier evidence.
+
+# book_proof_chain:
+# - Identify the underlying finite population set.
+# - Represent the choice as a fixed-cardinality subset.
+# - If there are restrictions, partition the subset family or subtract forbidden subset
+#   families.
+# - Apply the combination formula or inclusion-exclusion.
+
+# litex_objects_or_predicates:
+# - {s power_set(S): count(s)=k}
+# - fixed-cardinality subset count
+# - set partition
+
+# proof_debt: Formalize the source proof route directly and keep the first failing
+#             object-level Litex statement here or in the nearby todo.md.
+
+# intended_litex_attempt:
+# 1. Name the counted mathematical object before evaluating any numeric expression.
+# 2. Introduce or reuse Litex object: {s power_set(S): count(s)=k}.
+# 3. Introduce or reuse Litex object: fixed-cardinality subset count.
+# 4. Introduce or reuse Litex object: set partition.
+# next_verifier_step:
+# - Replace these comments with the smallest object-level Litex statement.
+# - Run the verifier.
+# - Record the exact first error or unknown line before simplifying the target.
+# expected_primary_blocker: blocked_by_infer_rule

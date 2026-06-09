@@ -1,0 +1,46 @@
+# id: ch1_theorem_05_combination_formula
+# source: A First Course in Probability, Chapter 1
+# kind: theorem
+# source_section: 1.4 Combinations
+# pages: 21-22
+# topic: combinations
+# difficulty: medium
+# natural_language_idea: The number of r-element subgroups of an n-element set is
+#                        C(n,r)=n!/((n-r)!r!).
+# litex_code: this file
+# proof_attempt: Define the set of r-element subsets of an n-element finite set. Relate
+#                ordered r-tuples without repetition to unordered r-subsets. Show each
+#                subset has r! ordered listings. Divide n(n-1)...(n-r+1) by r!.
+# status: blocked
+# blocker: blocked_by_infer_rule
+# notes: Current blocker: from s in power_set(S) and S finite, Litex does not infer s is
+#        finite for count(s).
+# verification_boundary: This file is a proof-route scaffold generated from the Chapter 1
+#                        extraction. Commented proof_debt and intended_litex_attempt lines
+#                        are not verified. Only uncommented Litex statements count as
+#                        verifier evidence.
+
+# book_proof_chain:
+# - Define the set of r-element subsets of an n-element finite set.
+# - Relate ordered r-tuples without repetition to unordered r-subsets.
+# - Show each subset has r! ordered listings.
+# - Divide n(n-1)...(n-r+1) by r!.
+
+# litex_objects_or_predicates:
+# - {s power_set(S): count(s)=r}
+# - no-repeat tuple
+# - choose(n,r)
+
+# proof_debt: Formalize the source proof route directly and keep the first failing
+#             object-level Litex statement here or in the nearby todo.md.
+
+# intended_litex_attempt:
+# 1. Name the counted mathematical object before evaluating any numeric expression.
+# 2. Introduce or reuse Litex object: {s power_set(S): count(s)=r}.
+# 3. Introduce or reuse Litex object: no-repeat tuple.
+# 4. Introduce or reuse Litex object: choose(n,r).
+# next_verifier_step:
+# - Replace these comments with the smallest object-level Litex statement.
+# - Run the verifier.
+# - Record the exact first error or unknown line before simplifying the target.
+# expected_primary_blocker: blocked_by_infer_rule

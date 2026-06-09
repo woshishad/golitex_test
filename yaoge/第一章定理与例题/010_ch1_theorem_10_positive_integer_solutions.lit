@@ -1,0 +1,48 @@
+# id: ch1_theorem_10_positive_integer_solutions
+# source: A First Course in Probability, Chapter 1
+# kind: proposition
+# source_section: 1.6 Integer Solutions
+# pages: 28-28
+# topic: integer solutions
+# difficulty: medium
+# natural_language_idea: The number of positive integer vectors x1+...+xr=n is C(n-1,r-1).
+# litex_code: this file
+# proof_attempt: Line up n indistinguishable objects. Choose r-1 of the n-1 gaps as
+#                dividers. Map each divider choice to group sizes x1,...,xr. Map each
+#                positive solution back to its divider positions. Use the bijection to get
+#                C(n-1,r-1).
+# status: blocked
+# blocker: blocked_by_stdlib
+# notes: Needs integer-solution set counting and fixed-cardinality subset count.
+# verification_boundary: This file is a proof-route scaffold generated from the Chapter 1
+#                        extraction. Commented proof_debt and intended_litex_attempt lines
+#                        are not verified. Only uncommented Litex statements count as
+#                        verifier evidence.
+
+# book_proof_chain:
+# - Line up n indistinguishable objects.
+# - Choose r-1 of the n-1 gaps as dividers.
+# - Map each divider choice to group sizes x1,...,xr.
+# - Map each positive solution back to its divider positions.
+# - Use the bijection to get C(n-1,r-1).
+
+# litex_objects_or_predicates:
+# - positive solution set
+# - gap set with n-1 elements
+# - fixed-cardinality subsets
+# - bijection
+
+# proof_debt: Formalize the source proof route directly and keep the first failing
+#             object-level Litex statement here or in the nearby todo.md.
+
+# intended_litex_attempt:
+# 1. Name the counted mathematical object before evaluating any numeric expression.
+# 2. Introduce or reuse Litex object: positive solution set.
+# 3. Introduce or reuse Litex object: gap set with n-1 elements.
+# 4. Introduce or reuse Litex object: fixed-cardinality subsets.
+# 5. Introduce or reuse Litex object: bijection.
+# next_verifier_step:
+# - Replace these comments with the smallest object-level Litex statement.
+# - Run the verifier.
+# - Record the exact first error or unknown line before simplifying the target.
+# expected_primary_blocker: blocked_by_stdlib

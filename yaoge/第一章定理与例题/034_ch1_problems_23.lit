@@ -1,0 +1,47 @@
+# id: ch1_problems_23
+# source: A First Course in Probability, Chapter 1
+# kind: problem
+# source_section: problems
+# pages: 32-32
+# topic: combinatorial analysis
+# difficulty: medium
+# natural_language_idea: A psychology laboratory conducting dream research contains 3 rooms,
+#                        with 2 beds in each room. If 3 sets of identical twins are to be
+#                        assigned to these 6 beds so that each set of twins sleeps in
+#                        different beds in the same room, how many assignments are possible?
+# litex_code: this file
+# proof_attempt: Start from labeled permutations. Identify the internal swaps that do not
+#                change the visible outcome. Use quotient counting by repeated classes.
+#                Evaluate n! divided by the product of repeated-class factorials.
+# status: blocked
+# blocker: blocked_by_stdlib
+# notes: Needs quotient counting for repeated/indistinguishable objects.
+# verification_boundary: This file is a proof-route scaffold generated from the Chapter 1
+#                        extraction. Commented proof_debt and intended_litex_attempt lines
+#                        are not verified. Only uncommented Litex statements count as
+#                        verifier evidence.
+
+# book_proof_chain:
+# - Start from labeled permutations.
+# - Identify the internal swaps that do not change the visible outcome.
+# - Use quotient counting by repeated classes.
+# - Evaluate n! divided by the product of repeated-class factorials.
+
+# litex_objects_or_predicates:
+# - labeled permutation
+# - finite quotient
+# - repeated-class factorials
+
+# proof_debt: Formalize the source proof route directly and keep the first failing
+#             object-level Litex statement here or in the nearby todo.md.
+
+# intended_litex_attempt:
+# 1. Name the counted mathematical object before evaluating any numeric expression.
+# 2. Introduce or reuse Litex object: labeled permutation.
+# 3. Introduce or reuse Litex object: finite quotient.
+# 4. Introduce or reuse Litex object: repeated-class factorials.
+# next_verifier_step:
+# - Replace these comments with the smallest object-level Litex statement.
+# - Run the verifier.
+# - Record the exact first error or unknown line before simplifying the target.
+# expected_primary_blocker: blocked_by_stdlib

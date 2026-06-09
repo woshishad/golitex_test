@@ -1,0 +1,51 @@
+# id: ch1_theorem_01_basic_counting
+# source: A First Course in Probability, Chapter 1
+# kind: theorem
+# source_section: 1.2 The Basic Principle of Counting
+# pages: 17-17
+# topic: combinatorial analysis
+# difficulty: easy
+# natural_language_idea: If experiment 1 has m possible outcomes and, for each outcome of
+#                        experiment 1, experiment 2 has n possible outcomes, then the two
+#                        experiments together have mn possible outcomes.
+# litex_code: this file
+# proof_attempt: Introduce finite sets A and B for the possible outcomes of the first and
+#                second experiments. Represent a two-stage outcome as an ordered pair in
+#                cart(A, B). Use Litex finite-set support to prove count(cart(A, B)) =
+#                count(A) * count(B). Use count(A)=m and count(B)=n to rewrite the final
+#                count as m*n.
+# status: translated
+# blocker: 
+# notes: Candidate route for direct verification. Keep as translated until a concrete .lit
+#        file is generated and run.
+# verification_boundary: This file is a proof-route scaffold generated from the Chapter 1
+#                        extraction. Commented proof_debt and intended_litex_attempt lines
+#                        are not verified. Only uncommented Litex statements count as
+#                        verifier evidence.
+
+# book_proof_chain:
+# - Introduce finite sets A and B for the possible outcomes of the first and second
+#   experiments.
+# - Represent a two-stage outcome as an ordered pair in cart(A, B).
+# - Use Litex finite-set support to prove count(cart(A, B)) = count(A) * count(B).
+# - Use count(A)=m and count(B)=n to rewrite the final count as m*n.
+
+# litex_objects_or_predicates:
+# - A finite_set
+# - B finite_set
+# - cart(A, B)
+# - count(cart(A, B))
+
+# proof_debt: Generate and run the concrete object-level Litex statement before changing
+#             this item from translated to checkable.
+
+# intended_litex_attempt:
+# 1. Name the counted mathematical object before evaluating any numeric expression.
+# 2. Introduce or reuse Litex object: A finite_set.
+# 3. Introduce or reuse Litex object: B finite_set.
+# 4. Introduce or reuse Litex object: cart(A, B).
+# 5. Introduce or reuse Litex object: count(cart(A, B)).
+# next_verifier_step:
+# - Replace these comments with the smallest object-level Litex statement.
+# - Run the verifier.
+# - Record the exact first error or unknown line before simplifying the target.

@@ -1,0 +1,49 @@
+# id: ch1_problems_05
+# source: A First Course in Probability, Chapter 1
+# kind: problem
+# source_section: problems
+# pages: 31-31
+# topic: integer solutions
+# difficulty: easy
+# natural_language_idea: For years, telephone area codes in the United States and Canada
+#                        consisted of a sequence of three digits. The first digit was an
+#                        integer between 2 and 9, the second digit was either 0 or 1, and
+#                        the third digit was any integer from 1 to 9. How many area codes
+#                        were possible? How many area codes start- ing with a 4 were
+#                        possible?
+# litex_code: this file
+# proof_attempt: Represent each independent position as a finite set. Represent the full
+#                outcome as a tuple in cart(S1,...,Sk). Use count(cart(...)) = product of
+#                the position counts. Evaluate the resulting product.
+# status: translated
+# blocker: 
+# notes: Candidate route for direct verification. Do not mark checkable until a concrete
+#        .lit file is generated and run.
+# verification_boundary: This file is a proof-route scaffold generated from the Chapter 1
+#                        extraction. Commented proof_debt and intended_litex_attempt lines
+#                        are not verified. Only uncommented Litex statements count as
+#                        verifier evidence.
+
+# book_proof_chain:
+# - Represent each independent position as a finite set.
+# - Represent the full outcome as a tuple in cart(S1,...,Sk).
+# - Use count(cart(...)) = product of the position counts.
+# - Evaluate the resulting product.
+
+# litex_objects_or_predicates:
+# - finite sets for positions
+# - cart(S1,...,Sk)
+# - count(cart(...))
+
+# proof_debt: Generate and run the concrete object-level Litex statement before changing
+#             this item from translated to checkable.
+
+# intended_litex_attempt:
+# 1. Name the counted mathematical object before evaluating any numeric expression.
+# 2. Introduce or reuse Litex object: finite sets for positions.
+# 3. Introduce or reuse Litex object: cart(S1,...,Sk).
+# 4. Introduce or reuse Litex object: count(cart(...)).
+# next_verifier_step:
+# - Replace these comments with the smallest object-level Litex statement.
+# - Run the verifier.
+# - Record the exact first error or unknown line before simplifying the target.

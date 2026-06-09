@@ -1,0 +1,50 @@
+# id: ch1_theorem_07_binomial_theorem
+# source: A First Course in Probability, Chapter 1
+# kind: theorem
+# source_section: 1.4 Combinations
+# pages: 23-24
+# topic: combinations
+# difficulty: medium
+# natural_language_idea: (x+y)^n = sum_{k=0}^n C(n,k) x^k y^{n-k}.
+# litex_code: this file
+# proof_attempt: Induction route: prove base n=1. Assume the expansion for n-1. Multiply by
+#                (x+y) and split into two finite sums. Reindex the two sums. Use Pascal
+#                identity to combine coefficients. Combinatorial route: each term chooses
+#                which k of n factors contribute x.
+# status: blocked
+# blocker: blocked_by_stdlib
+# notes: Concrete polynomial identities are checkable; the general finite-sum theorem needs
+#        more support.
+# verification_boundary: This file is a proof-route scaffold generated from the Chapter 1
+#                        extraction. Commented proof_debt and intended_litex_attempt lines
+#                        are not verified. Only uncommented Litex statements count as
+#                        verifier evidence.
+
+# book_proof_chain:
+# - Induction route: prove base n=1.
+# - Assume the expansion for n-1.
+# - Multiply by (x+y) and split into two finite sums.
+# - Reindex the two sums.
+# - Use Pascal identity to combine coefficients.
+# - Combinatorial route: each term chooses which k of n factors contribute x.
+
+# litex_objects_or_predicates:
+# - finite sum over k
+# - choose(n,k)
+# - polynomial equality
+# - induction on n
+
+# proof_debt: Formalize the source proof route directly and keep the first failing
+#             object-level Litex statement here or in the nearby todo.md.
+
+# intended_litex_attempt:
+# 1. Name the counted mathematical object before evaluating any numeric expression.
+# 2. Introduce or reuse Litex object: finite sum over k.
+# 3. Introduce or reuse Litex object: choose(n,k).
+# 4. Introduce or reuse Litex object: polynomial equality.
+# 5. Introduce or reuse Litex object: induction on n.
+# next_verifier_step:
+# - Replace these comments with the smallest object-level Litex statement.
+# - Run the verifier.
+# - Record the exact first error or unknown line before simplifying the target.
+# expected_primary_blocker: blocked_by_stdlib

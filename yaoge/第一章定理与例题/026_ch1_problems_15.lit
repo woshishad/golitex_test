@@ -1,0 +1,47 @@
+# id: ch1_problems_15
+# source: A First Course in Probability, Chapter 1
+# kind: problem
+# source_section: problems
+# pages: 31-31
+# topic: combinatorial analysis
+# difficulty: easy
+# natural_language_idea: A dance class consists of 22 students, of which 10 are women and 12
+#                        are men. If 5 men and 5 women are to be chosen and then paired off,
+#                        how many results are possible?
+# litex_code: this file
+# proof_attempt: Identify the finite outcome object described by the problem. Choose the
+#                relevant Chapter 1 counting principle: product, permutation, combination,
+#                multinomial coefficient, or stars-and-bars. Write the counted object before
+#                evaluating arithmetic. Run Litex on the object-level formulation and
+#                classify the first failure.
+# status: translated
+# blocker: blocked_by_formulation
+# notes: Manual classification needed.
+# verification_boundary: This file is a proof-route scaffold generated from the Chapter 1
+#                        extraction. Commented proof_debt and intended_litex_attempt lines
+#                        are not verified. Only uncommented Litex statements count as
+#                        verifier evidence.
+
+# book_proof_chain:
+# - Identify the finite outcome object described by the problem.
+# - Choose the relevant Chapter 1 counting principle: product, permutation, combination,
+#   multinomial coefficient, or stars-and-bars.
+# - Write the counted object before evaluating arithmetic.
+# - Run Litex on the object-level formulation and classify the first failure.
+
+# litex_objects_or_predicates:
+# - finite outcome set
+# - count(...)
+
+# proof_debt: Formalize the source proof route directly and keep the first failing
+#             object-level Litex statement here or in the nearby todo.md.
+
+# intended_litex_attempt:
+# 1. Name the counted mathematical object before evaluating any numeric expression.
+# 2. Introduce or reuse Litex object: finite outcome set.
+# 3. Introduce or reuse Litex object: count(...).
+# next_verifier_step:
+# - Replace these comments with the smallest object-level Litex statement.
+# - Run the verifier.
+# - Record the exact first error or unknown line before simplifying the target.
+# expected_primary_blocker: blocked_by_formulation

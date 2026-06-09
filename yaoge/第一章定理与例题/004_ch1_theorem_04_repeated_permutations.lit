@@ -1,0 +1,47 @@
+# id: ch1_theorem_04_repeated_permutations
+# source: A First Course in Probability, Chapter 1
+# kind: theorem
+# source_section: 1.3 Permutations
+# pages: 20-20
+# topic: permutations
+# difficulty: medium
+# natural_language_idea: If n objects are divided into repeated classes of sizes n1, ...,
+#                        nr, the number of distinguishable linear arrangements is
+#                        n!/(n1!...nr!).
+# litex_code: this file
+# proof_attempt: Start from labeled permutations of n distinct copies. Define an equivalence
+#                relation that swaps objects inside each repeated class. Show every visible
+#                arrangement has n1!*...*nr! labeled representatives. Divide n! by the
+#                internal class permutation count.
+# status: blocked
+# blocker: blocked_by_stdlib
+# notes: Needs quotient counting for indistinguishable objects.
+# verification_boundary: This file is a proof-route scaffold generated from the Chapter 1
+#                        extraction. Commented proof_debt and intended_litex_attempt lines
+#                        are not verified. Only uncommented Litex statements count as
+#                        verifier evidence.
+
+# book_proof_chain:
+# - Start from labeled permutations of n distinct copies.
+# - Define an equivalence relation that swaps objects inside each repeated class.
+# - Show every visible arrangement has n1!*...*nr! labeled representatives.
+# - Divide n! by the internal class permutation count.
+
+# litex_objects_or_predicates:
+# - finite quotient
+# - equivalence classes
+# - factorial
+
+# proof_debt: Formalize the source proof route directly and keep the first failing
+#             object-level Litex statement here or in the nearby todo.md.
+
+# intended_litex_attempt:
+# 1. Name the counted mathematical object before evaluating any numeric expression.
+# 2. Introduce or reuse Litex object: finite quotient.
+# 3. Introduce or reuse Litex object: equivalence classes.
+# 4. Introduce or reuse Litex object: factorial.
+# next_verifier_step:
+# - Replace these comments with the smallest object-level Litex statement.
+# - Run the verifier.
+# - Record the exact first error or unknown line before simplifying the target.
+# expected_primary_blocker: blocked_by_stdlib

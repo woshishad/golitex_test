@@ -1,0 +1,52 @@
+# id: ch1_problems_29
+# source: A First Course in Probability, Chapter 1
+# kind: problem
+# source_section: problems
+# pages: 32-32
+# topic: combinatorial analysis
+# difficulty: easy
+# natural_language_idea: Ten weight lifters are competing in a team weight- lifting contest.
+#                        Of the lifters, 3 are from the United States, 4 are from Russia, 2
+#                        are from China, and 1 is from Canada. If the scoring takes account
+#                        of the countries that the lifters represent, but not their
+#                        individual identities, how many different outcomes are possible
+#                        from the point of view of scores? How many different outcomes
+#                        correspond to results in which the United States has 1 competitor
+#                        in the top three and 2 in the bottom three?
+# litex_code: this file
+# proof_attempt: Identify the finite outcome object described by the problem. Choose the
+#                relevant Chapter 1 counting principle: product, permutation, combination,
+#                multinomial coefficient, or stars-and-bars. Write the counted object before
+#                evaluating arithmetic. Run Litex on the object-level formulation and
+#                classify the first failure.
+# status: translated
+# blocker: blocked_by_formulation
+# notes: Manual classification needed.
+# verification_boundary: This file is a proof-route scaffold generated from the Chapter 1
+#                        extraction. Commented proof_debt and intended_litex_attempt lines
+#                        are not verified. Only uncommented Litex statements count as
+#                        verifier evidence.
+
+# book_proof_chain:
+# - Identify the finite outcome object described by the problem.
+# - Choose the relevant Chapter 1 counting principle: product, permutation, combination,
+#   multinomial coefficient, or stars-and-bars.
+# - Write the counted object before evaluating arithmetic.
+# - Run Litex on the object-level formulation and classify the first failure.
+
+# litex_objects_or_predicates:
+# - finite outcome set
+# - count(...)
+
+# proof_debt: Formalize the source proof route directly and keep the first failing
+#             object-level Litex statement here or in the nearby todo.md.
+
+# intended_litex_attempt:
+# 1. Name the counted mathematical object before evaluating any numeric expression.
+# 2. Introduce or reuse Litex object: finite outcome set.
+# 3. Introduce or reuse Litex object: count(...).
+# next_verifier_step:
+# - Replace these comments with the smallest object-level Litex statement.
+# - Run the verifier.
+# - Record the exact first error or unknown line before simplifying the target.
+# expected_primary_blocker: blocked_by_formulation

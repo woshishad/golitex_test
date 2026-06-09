@@ -1,0 +1,47 @@
+# id: ch1_self_test_06
+# source: A First Course in Probability, Chapter 1
+# kind: problem
+# source_section: self_test
+# pages: 35-35
+# topic: combinatorial analysis
+# difficulty: easy
+# natural_language_idea: How many different 7-place license plates are pos- sible when 3 of
+#                        the entries are letters and 4 are digits? Assume that repetition of
+#                        letters and num- bers is allowed and that there is no restriction
+#                        on where the letters or numbers can be placed.
+# litex_code: this file
+# proof_attempt: Represent each independent position as a finite set. Represent the full
+#                outcome as a tuple in cart(S1,...,Sk). Use count(cart(...)) = product of
+#                the position counts. Evaluate the resulting product.
+# status: translated
+# blocker: 
+# notes: Candidate route for direct verification. Do not mark checkable until a concrete
+#        .lit file is generated and run.
+# verification_boundary: This file is a proof-route scaffold generated from the Chapter 1
+#                        extraction. Commented proof_debt and intended_litex_attempt lines
+#                        are not verified. Only uncommented Litex statements count as
+#                        verifier evidence.
+
+# book_proof_chain:
+# - Represent each independent position as a finite set.
+# - Represent the full outcome as a tuple in cart(S1,...,Sk).
+# - Use count(cart(...)) = product of the position counts.
+# - Evaluate the resulting product.
+
+# litex_objects_or_predicates:
+# - finite sets for positions
+# - cart(S1,...,Sk)
+# - count(cart(...))
+
+# proof_debt: Generate and run the concrete object-level Litex statement before changing
+#             this item from translated to checkable.
+
+# intended_litex_attempt:
+# 1. Name the counted mathematical object before evaluating any numeric expression.
+# 2. Introduce or reuse Litex object: finite sets for positions.
+# 3. Introduce or reuse Litex object: cart(S1,...,Sk).
+# 4. Introduce or reuse Litex object: count(cart(...)).
+# next_verifier_step:
+# - Replace these comments with the smallest object-level Litex statement.
+# - Run the verifier.
+# - Record the exact first error or unknown line before simplifying the target.

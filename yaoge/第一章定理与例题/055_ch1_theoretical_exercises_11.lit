@@ -1,0 +1,51 @@
+# id: ch1_theoretical_exercises_11
+# source: A First Course in Probability, Chapter 1
+# kind: problem
+# source_section: theoretical_exercises
+# pages: 33-33
+# topic: combinations
+# difficulty: medium
+# natural_language_idea: The following identity is known as Fermat’s com- binatorial
+#                        identity: ⎨ n k ⎩ = n∑ i=k ⎨ i - 1 k - 1 ⎩ n >= k Give a
+#                        combinatorial argument (no computations are needed) to establish
+#                        this identity. Hint: Consider the set of numbers 1 through n. How
+#                        many subsets of size k have i as their highest- numbered member?
+# litex_code: this file
+# proof_attempt: Identify the underlying finite population set. Represent the choice as a
+#                fixed-cardinality subset. If there are restrictions, partition the subset
+#                family or subtract forbidden subset families. Apply the combination formula
+#                or inclusion-exclusion.
+# status: blocked
+# blocker: blocked_by_infer_rule
+# notes: Known blocker: Litex currently needs better finite-subset/count inference for
+#        set-builder subsets.
+# verification_boundary: This file is a proof-route scaffold generated from the Chapter 1
+#                        extraction. Commented proof_debt and intended_litex_attempt lines
+#                        are not verified. Only uncommented Litex statements count as
+#                        verifier evidence.
+
+# book_proof_chain:
+# - Identify the underlying finite population set.
+# - Represent the choice as a fixed-cardinality subset.
+# - If there are restrictions, partition the subset family or subtract forbidden subset
+#   families.
+# - Apply the combination formula or inclusion-exclusion.
+
+# litex_objects_or_predicates:
+# - {s power_set(S): count(s)=k}
+# - fixed-cardinality subset count
+# - set partition
+
+# proof_debt: Formalize the source proof route directly and keep the first failing
+#             object-level Litex statement here or in the nearby todo.md.
+
+# intended_litex_attempt:
+# 1. Name the counted mathematical object before evaluating any numeric expression.
+# 2. Introduce or reuse Litex object: {s power_set(S): count(s)=k}.
+# 3. Introduce or reuse Litex object: fixed-cardinality subset count.
+# 4. Introduce or reuse Litex object: set partition.
+# next_verifier_step:
+# - Replace these comments with the smallest object-level Litex statement.
+# - Run the verifier.
+# - Record the exact first error or unknown line before simplifying the target.
+# expected_primary_blocker: blocked_by_infer_rule

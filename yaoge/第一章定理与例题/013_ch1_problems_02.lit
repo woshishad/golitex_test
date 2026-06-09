@@ -1,0 +1,47 @@
+# id: ch1_problems_02
+# source: A First Course in Probability, Chapter 1
+# kind: problem
+# source_section: problems
+# pages: 31-31
+# topic: combinatorial analysis
+# difficulty: easy
+# natural_language_idea: How many outcome sequences are possible when a die is rolled four
+#                        times, where we say, for instance, that the outcome is 3, 4, 3, 1
+#                        if the first roll landed on 3, the second on 4, the third on 3, and
+#                        the fourth on 1?
+# litex_code: this file
+# proof_attempt: Represent each independent position as a finite set. Represent the full
+#                outcome as a tuple in cart(S1,...,Sk). Use count(cart(...)) = product of
+#                the position counts. Evaluate the resulting product.
+# status: translated
+# blocker: 
+# notes: Candidate route for direct verification. Do not mark checkable until a concrete
+#        .lit file is generated and run.
+# verification_boundary: This file is a proof-route scaffold generated from the Chapter 1
+#                        extraction. Commented proof_debt and intended_litex_attempt lines
+#                        are not verified. Only uncommented Litex statements count as
+#                        verifier evidence.
+
+# book_proof_chain:
+# - Represent each independent position as a finite set.
+# - Represent the full outcome as a tuple in cart(S1,...,Sk).
+# - Use count(cart(...)) = product of the position counts.
+# - Evaluate the resulting product.
+
+# litex_objects_or_predicates:
+# - finite sets for positions
+# - cart(S1,...,Sk)
+# - count(cart(...))
+
+# proof_debt: Generate and run the concrete object-level Litex statement before changing
+#             this item from translated to checkable.
+
+# intended_litex_attempt:
+# 1. Name the counted mathematical object before evaluating any numeric expression.
+# 2. Introduce or reuse Litex object: finite sets for positions.
+# 3. Introduce or reuse Litex object: cart(S1,...,Sk).
+# 4. Introduce or reuse Litex object: count(cart(...)).
+# next_verifier_step:
+# - Replace these comments with the smallest object-level Litex statement.
+# - Run the verifier.
+# - Record the exact first error or unknown line before simplifying the target.
